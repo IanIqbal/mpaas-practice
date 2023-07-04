@@ -1,0 +1,21 @@
+<view>
+  <list>
+    <picker-item
+      data-field="bank"
+      placeholder="Select issuing bank"
+      value="{{bank}}"
+      onPickerTap="onPickerTap"
+    >
+      Issuing bank
+    </picker-item>
+    <picker-item
+      data-field="bank"
+      placeholder="Select issuing bank"
+      value="{{bank}}"
+      onPickerTap="onPickerTap"
+      layer="vertical"
+    >
+      Issuing bank
+    </picker-item>
+  </list>
+</view>

@@ -1,0 +1,14 @@
+<view class="page">
+  <view class="page-description">Compressed picture API</view>
+  <view class="page-section">
+    <view class="page-section-title">my.generateImageFromCode</view>
+    <view class="page-section-demo">
+      <button type="primary" onTap="buttonClick" hover-class="defaultTap">Generate QR code</button>
+      <image
+        src="{{imageStr}}" 
+        mode="{{mode}}" />
+    </view>
+  </view>
+</view>
+
+

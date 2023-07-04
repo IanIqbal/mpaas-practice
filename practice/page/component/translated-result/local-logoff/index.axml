@@ -1,0 +1,8 @@
+<view>
+  <page-result
+    type="logoff"
+    local="{{true}}"
+    brief="focus on life " />
+  <view style="height: 150px; margin: 10px; background: #dddddd;" />
+  <view style="height: 150px; margin: 10px; background: #dddddd;" />
+</view>

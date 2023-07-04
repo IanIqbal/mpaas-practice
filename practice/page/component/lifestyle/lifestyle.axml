@@ -1,0 +1,4 @@
+<view>
+    <lifestyle a:if="{{canUse}}" publicId='2016021701146995'/>
+    <view a:else>Please upgrade Alipay to support life account jump</view>
+</view>

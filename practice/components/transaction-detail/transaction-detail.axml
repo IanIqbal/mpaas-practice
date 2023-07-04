@@ -1,0 +1,16 @@
+<view>
+  <list a:for="{{ transaction.TransactionItems }}" >
+
+    <view>
+      <list-item
+      title="{{item.brand}}"
+      brief="{{item.category}}"
+      extra="{{item.formattedTotalPrice}}"
+      extraBrief="{{item.formattedPrice}} X {{item.totalPiece}}"
+      >
+      {{item.item}}
+    </list-item>
+    </view>
+
+  </list>
+</view>

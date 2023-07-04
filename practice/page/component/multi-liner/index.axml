@@ -1,0 +1,13 @@
+<view>
+  <view style="margin-top: 10px;" />
+  <view class="title">Multiline input</view>
+  <multi-liner data-field="area" 
+    placeholder="word count ↘" 
+    type="text" 
+    value="{{value}}" 
+    onInput="onInput" 
+    last="{{true}}" 
+    auto-height="{{true}}" 
+    controlled="{{controlled}}"/>
+  <view style="margin: 10px;" />
+</view>

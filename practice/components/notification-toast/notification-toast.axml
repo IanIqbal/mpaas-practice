@@ -1,0 +1,10 @@
+<toast 
+content="{{toast.message}}" 
+visible="{{toast.status}}"
+data-index="8" 
+type="{{error}}" 
+onClose="{{handleCloseToast}}" 
+showMask="{{true}}" 
+duration="{{0}}" 
+maskCloseable="{{true}}" 
+/>

@@ -1,0 +1,8 @@
+<view>
+  <page-result
+    type="network"
+    local="{{true}}"
+    brief="The network is not awesome" />
+  <view style="height: 150px; margin: 10px; background: #dddddd;" />
+  <view style="height: 150px; margin: 10px; background: #dddddd;" />
+</view>

@@ -1,0 +1,30 @@
+<steps 
+  className="demo-steps-class"
+  activeIndex="{{activeIndex}}"
+  items="{{items}}"
+/>
+<steps 
+  className="demo-steps-class"
+  activeIndex="{{activeIndex}}"
+  items="{{items2}}"
+/>
+<steps 
+  className="demo-steps-class"
+  direction="vertical"
+  failIndex="{{failIndex}}"
+  activeIndex="{{activeIndex}}"
+  items="{{items2}}"
+  size="{{size}}"
+/>
+<view class="demo-btn-container">
+  <button class="demo-btn" onTap="preStep">pre Step</button>
+  <button class="demo-btn" onTap="nextStep">next Step</button>
+</view>
+<view class="demo-btn-container">
+  <button class="demo-btn" onTap="setFailIndex">set error item</button>
+  <button class="demo-btn" onTap="cancelFailIndex">cancel error item</button>
+</view>
+<view class="demo-btn-container">
+  <button class="demo-btn" onTap="setIconSizeAdd">Set Icon Size+</button>
+  <button class="demo-btn" onTap="setIconSizeReduce">Set Icon Size-</button>
+</view>

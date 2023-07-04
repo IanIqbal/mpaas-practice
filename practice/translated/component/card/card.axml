@@ -1,0 +1,36 @@
+<view class="container">
+  <card title="Card Title1" 
+    onCardClick="onCardClick" 
+    info="Click the First cardtttttt" />
+  <view style="margin-top: 10px;" />
+  <card thumb="{{thumb}}" 
+    title="Card Title2" 
+    subTitle="Sub Title Not required2" 
+    onCardClick="onCardClick" 
+    info="Click Second card" />
+  <view style="margin-top: 10px;" />
+  <view>
+    <card thumb="{{thumb}}" 
+      title="Card Title3" 
+      subTitle="Sub Title Not required3" 
+      onCardClick="toggle" 
+      action="Decription" 
+      onActionClick="onActionClick" 
+      extraAction="Click on the card to expand/collapse↑" 
+      onExtraActionClick="onExtraActionClick" 
+      info="Click Third card" 
+      expand="{{expand3rd}}" 
+      bgImg="https://gw.alipayobjects.com/mdn/rms_ce4c6f/afts/img/A*OjyRRqjLM6MAAAAAAAAAAABkARQnAQ" />
+  </view>
+  <view style="margin-top: 10px;" />
+  <view>
+    <card thumb="{{thumb}}" 
+      title="Card Title3" 
+      subTitle="Sub Title Not required3" 
+      onCardClick="onCardClick" 
+      info="Click Third card" 
+      bgImg="https://gw.alipayobjects.com/mdn/rms_ce4c6f/afts/img/A*OjyRRqjLM6MAAAAAAAAAAABkARQnAQ"
+      expand
+    />
+  </view>
+</view>

@@ -1,0 +1,54 @@
+<view>
+  <!-- <tips-dialog show="{{showDialog}}" className="dialog" type="dialog">
+    <view class="content" slot="content">
+      <view>hello,</view>
+      <view>Welcome to the applet extension component library</view>
+    </view>
+    <am-button slot="operation" shape="capsule" onTap="onRectangleTap">got it</am-button>
+  </tips-dialog> -->
+  <tips-dialog iconUrl="{{useIcon ? 'https://gw.alipayobjects.com/zos/rmsportal/AzRAgQXlnNbEwQRvEwiu.png' : ''}}" 
+    iconSize="36" 
+    type="rectangle" 
+    className="rectangle" 
+    onCloseTap="onCloseTap" 
+    show="{{showRectangle}}" 
+    arrowPosition="{{arrowPositions[arrowPosIndex]}}">
+    <view class="content" 
+      slot="content">
+      Arrow yes8Directions。Word digit digit digit two lines
+    </view>
+    <am-button a:if="{{useButton}}" 
+      slot="operation" 
+      shape="capsule" 
+      capsuleSize="small" 
+      onTap="onRectangleTap">Add now</am-button>
+    <!-- <view slot="operation" class="add-home" onTap="onRectangleTap">立即添加</view> -->
+  </tips-dialog>
+  <view style="padding: 20px 10px;">
+    <picker onChange="setInfo" 
+      value="{{arrowPosIndex}}" 
+      range="{{arrowPositions}}" 
+      data-name="arrowPosIndex">
+      <view class="row">
+        <view class="row-title">Arrow Position </view>
+        <view class="row-extra">Current selection：{{arrowPositions[arrowPosIndex]}}</view>
+        <am-icon type="right" 
+          size="13" />
+      </view>
+    </picker>
+    <list-item>
+      Left Icon
+      <switch slot="extra" 
+        checked="{{useIcon}}" 
+        onChange="setInfo" 
+        data-name="useIcon" />
+    </list-item>
+    <list-item>
+      Right button
+      <switch slot="extra" 
+        checked="{{useButton}}" 
+        onChange="setInfo" 
+        data-name="useButton" />
+    </list-item>
+  </view>
+</view>

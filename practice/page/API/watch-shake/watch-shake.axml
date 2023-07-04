@@ -1,0 +1,5 @@
+<view class="page">
+  <button type="primary" onTap="watchShake">
+    Bind shake，click Shake Button to see the effect
+  </button>
+</view>

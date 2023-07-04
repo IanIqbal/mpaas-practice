@@ -1,0 +1,23 @@
+<view id="product-card" data-product={{product}}>
+  <view id="image-card">
+    <image mode="scaleToFill" src={{product.thumbnail}} />
+  </view>
+  <view id="text-card">
+    <text id="text-title">{{product.title}}</text>
+    <view>
+      <text class="{{product.discountPercentage? 'discounted-product' : ''}}">
+        {{product.formattedPrice}}
+      </text>
+      <button className="discount-value" inline size="small" type="text">
+        {{product.discountPercentage}}%
+      </button>
+
+    </view>
+    <text a:if="{{ product.discountPercentage }}" class="final-price">
+      {{product.formattedFinalPrice}}
+    </text>
+    <text>
+
+    </text>
+  </view>
+</view>

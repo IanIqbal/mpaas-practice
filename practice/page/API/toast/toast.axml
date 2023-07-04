@@ -1,0 +1,21 @@
+<view class="page">
+  <view class="page-description">Toast API</view>
+  <view class="page-section">
+    <view class="page-section-title">my.showToast</view>
+    <view class="page-section-btns">
+      <view type="primary" onTap="showToastSuccess">display success Tips</view>
+      <view type="primary" onTap="showToastFail">display fail Tips</view>
+    </view>
+    <view class="page-section-btns">
+      <view type="primary" onTap="showToastException">display exception Tips</view>
+      <view type="primary" onTap="showToastNone">display none Weak prompt</view>
+    </view>
+  </view>
+
+  <view class="page-section">
+    <view class="page-section-title">my.hideToast</view>
+    <view class="page-section-btns">
+      <view onTap="hideToast">Hide weak tips</view>
+    </view>
+  </view>
+</view>

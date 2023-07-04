@@ -1,0 +1,12 @@
+<view class="page">
+  <view class="page-description">Get picture information API</view>
+  <view class="page-section">
+    <view class="page-section-title">my.getImageInfo</view>
+    <view class="page-section-demo">
+      <image src="{{src}}" onError="imageError" onLoad="imageLoad" />
+      <button type="primary" onTap="getImageInfo">Get picture information</button>
+    </view>
+  </view>
+</view>
+
+

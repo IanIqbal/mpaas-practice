@@ -1,0 +1,46 @@
+<view class="container">
+  <title>External title</title>
+
+  <title hasLine="true">Internal header  icon</title>
+
+  <title
+  iconURL="https://img.alicdn.com/tfs/TB1UNX2bSFRMKJjy0FhXXX.xpXa-112-46.png"
+  >no underscore</title>
+
+  <title
+  hasLine="true"
+  iconURL="https://img.alicdn.com/tfs/TB1UNX2bSFRMKJjy0FhXXX.xpXa-112-46.png"
+  >Internal header no action</title>
+
+  <title
+  hasLine="true"
+  iconURL="https://gw.alipayobjects.com/mdn/miniProgram_mendian/afts/img/A*wiFYTo5I0m8AAAAAAAAAAABjAQAAAQ/original"
+  type="arrow"
+  onActionTap="titleGo"
+  >Internal title can jump</title>
+
+  <title
+  hasLine="true"
+  type="more"
+  onActionTap="titleMore"
+  >The inner title has no icon to expand the bubble menu</title>
+
+  <title
+  hasLine="true"
+  iconURL="https://t.alipayobjects.com/images/T1HHFgXXVeXXXXXXXX.png"
+  type="close"
+  onActionTap="titleClose"
+  >Internal headers can be closed</title>
+
+  <title
+  hasLine="true"
+  >After the title is too long, the title is displayed on a single line. After the title is too long, the title is displayed on a single line.</title>
+
+  <title
+  hasLine="true"
+  className="changeColor"
+  iconURL="https://gw.alipayobjects.com/mdn/miniProgram_mendian/afts/img/A*wiFYTo5I0m8AAAAAAAAAAABjAQAAAQ/original"
+  type="arrow"
+  onActionTap="titleGo"
+  >Use class to modify the style</title>
+</view>

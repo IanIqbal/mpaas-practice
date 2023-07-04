@@ -1,0 +1,12 @@
+{
+  "defaultTitle": "Account",
+  "allowsBounceVertical":"NO",
+  "transparentTitle": "none",
+  "titleBarColor": "#262833",
+  "usingComponents": {
+    "icon": "antd-mini/es/Icon/index",
+    "button": "antd-mini/es/Button/index",
+    "list": "antd-mini/es/List/index",
+    "list-item": "antd-mini/es/List/ListItem/index"
+  }
+}

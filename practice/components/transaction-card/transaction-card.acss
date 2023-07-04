@@ -1,0 +1,104 @@
+#card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 20px;
+  padding: 5px;
+  border: #05BFDB solid 1px;
+  border-radius: 12px;
+}
+
+#header-section {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px;
+  border-bottom: rgba(90, 90, 90, 0.301) solid 1px;
+  padding-bottom: 5px;
+}
+
+#header-left {
+  display: flex;
+}
+
+.header-icon {
+  font-size: 1.5em;
+}
+
+#right-icon {
+  transform: rotate(90deg);
+}
+
+#header-left-text {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  font-size: 0.8em;
+}
+
+#header-right {
+  display: flex;
+  align-items: center;
+}
+
+.header-button {
+  color: #E57C23;
+  padding: 2px 4px;
+  border: solid 1px #E57C23;
+  font-size: 0.9em;
+}
+
+
+#title-section {
+  display: flex;
+  flex-direction: column;
+}
+
+#title-image {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#title-image-card {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  margin: 10px 20px;
+}
+
+#title-image-card image {
+  width: 75px;
+  height: 75px;
+}
+
+#item-section {
+  display: flex;
+}
+
+
+#lower-section {
+  margin-top: 5px;
+  margin-bottom: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#price-section {
+  display: flex;
+}
+
+#button-section{
+  display: flex;
+  flex-direction: row-reverse;
+}
+.detail-button {
+  color: white;
+  background-color: #05BFDB;
+  border: solid 1px #05BFDB;
+}
+
+#scrollview-modal{
+  height: 600px;
+  padding: 20px;
+  margin-bottom: 60px;
+}

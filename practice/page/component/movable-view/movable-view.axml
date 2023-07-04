@@ -1,0 +1,40 @@
+<view class="page">
+  <view class="page-description">Movable view</view>
+  <view class="page-section">
+    <view class="page-section-title">movable-viewArea less thanmovable-area</view>
+    <view class="page-section-demo">
+      <movable-area>
+        <movable-view x="{{x}}" y="{{y}}" direction="all">movable-view</movable-view>
+      </movable-area>
+    </view>
+    <button style="margin-left: 10px; mrigin-right: 10px;" type="primary" onTap="onButtonTap">Click move to (30px, 30px)</button>
+  </view>
+  <view class="page-section">
+    <view class="page-section-title">movable-viewArea greater thanmovable-area</view>
+    <view class="page-section-demo">
+      <movable-area>
+        <movable-view class="max" direction="all">movable-view</movable-view>
+      </movable-area>
+    </view>
+  </view>
+  <view class="page-section">
+    <view class="page-section-title">Can only move laterally</view>
+    <view class="page-section-demo">
+     <movable-area>
+        <movable-view direction="horizontal">
+          movable-view
+        </movable-view>
+      </movable-area>
+    </view>
+  </view>
+  <view class="page-section">
+    <view class="page-section-title">Can only move vertically</view>
+    <view class="page-section-demo">
+     <movable-area>
+        <movable-view direction="vertical">
+          movable-view
+        </movable-view>
+      </movable-area>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,72 @@
+<view id="main-container">
+  <view id="image-section">
+    <swiper autoplay={{true}} duration={{500}} interval={{3000}} indicator-dots="{{true}}">
+      <block a:for={{detailProduct.images}} a:for-item="image">
+        <swiper-item class="image-card">
+          <image lazy-load={{true}} src={{image}} />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view id="head-info">
+
+    <view class="title-info text-info">
+      <text>{{detailProduct.title}}</text>
+    </view>
+
+    <view id="price-info" class="text-info">
+      <text>{{detailProduct.formattedPrice}}</text>
+    </view>
+    
+    <view id="final-price-info" class="text-info">
+      <text>
+        {{detailProduct.formattedFinalPrice}}
+      </text>
+      <button size="small" type="text" inline>
+        {{detailProduct.discountPercentage}}%
+      </button>
+    </view>
+
+    <view id="rating-info" class="text-info">
+      <view>
+        <icon type="StarOutline" className="rating-info-icon" />
+        <text>  {{detailProduct.rating}}</text>
+      </view>
+
+      <view>
+        <button size="small" type="text" inline>
+          {{detailProduct.brand}}
+        </button>
+        <button size="small" type="text" inline>
+          {{detailProduct.category}}
+        </button>
+      </view>
+    </view>
+
+  </view>
+  <view id="description-section">
+    <view style="margin-bottom:10px" class="title-info">
+      <text>Product Description</text>
+    </view>
+    <text>
+      {{detailProduct.description}}
+    </text>
+  </view>
+
+  <view id="button-section">
+    <button size="default" type="primary" onTap="addToCart">
+      Add to Cart
+    </button>
+  </view>
+
+  <toast 
+  content="Item added to cart" 
+  type="success"
+  visible="{{toastStatus}}" 
+  data-index="4" 
+  duration="{{1000}}" 
+  showMask="{{true}}" 
+  maskCloseable="{{true}}" 
+  onClose="toastHandler"
+/>
+</view>

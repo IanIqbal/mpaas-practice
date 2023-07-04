@@ -1,0 +1,3 @@
+<view id="main-container" style="background-color:red" >
+  <image  src="/image/splash-screen.jpeg" />
+</view>

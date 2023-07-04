@@ -1,0 +1,23 @@
+<view class="demo-avatar">
+	<view style="margin-top: 10px;" />
+  <view class="demo-avatar-size-intro">3 types of size</view>
+  <view class="demo-avatar-size">
+    <view class="demo-avatar-size-container">
+      <avatar size="lg"/>
+    </view>
+    <view class="demo-avatar-size-container">
+      <avatar/>
+    </view>
+    <view class="demo-avatar-size-container">
+      <avatar size="sm"/>
+    </view>
+  </view>
+  <view style="margin-top: 20px;" />
+  <view class="demo-avatar-content">
+    <avatar mode="widthFix" name="User Name" desc="summary information" size="sm"/>
+    <view style="margin-top: 20px;" />
+    <avatar name="User Name" desc="summary information" size="md"/>
+    <view style="margin-top: 20px;" />
+    <avatar name="User Name" desc="summary information" size="lg"/>
+  </view>
+</view>

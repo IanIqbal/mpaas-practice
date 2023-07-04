@@ -1,0 +1,82 @@
+<view class="page">
+  <view>
+    <button a:if="{{returnIndex}}" onTap="returnIndex">Back to the home page</button>
+  </view>
+  <view class="page-description">View Container，it is like web div or View in react-native</view>
+  <view class="page-section">
+    <view class="page-section-demo">
+      <view class="stream">
+        <view class="post">
+          <view class="postUser">
+            <view class="postUser__name">Chris</view>
+          </view>
+          <view class="postBody">
+            <view class="postBody__content">
+              Welcome to use Alipay Mini program.
+            </view>
+            <view class="postBody__date">
+              May 20
+            </view>
+          </view>
+        </view>
+
+        <view class="post">
+          <view class="postUser">
+            <view class="postUser__name">Jack</view>
+          </view>
+          <view class="postBody">
+            <view class="postBody__content">
+              How do I get started？
+            </view>
+            <view class="postBody__date">
+              May 21
+            </view>
+          </view>
+        </view>
+
+        <view class="post">
+          <view class="postUser">
+            <view class="postUser__name">Chris</view>
+          </view>
+          <view class="postBody">
+            <view class="postBody__content">
+              ou can view the Demo to have a simple understanding; then download our IDE for development.
+            </view>
+            <view class="postBody__date">
+              May 22
+            </view>
+          </view>
+        </view>
+
+        <view class="post">
+          <view class="postUser">
+            <view class="postUser__name">Jessie</view>
+          </view>
+          <!-- hover red -->
+          <view class="postBody" hover-class="red">
+            <view class="postBody__content">
+              Like!
+            </view>
+            <view class="postBody__date" hidden>
+              June 1
+            </view>
+          </view>
+        </view>
+
+        <view class="post" hidden>
+          <view class="postUser">
+            <view class="postUser__name">Jessie</view>
+          </view>
+          <view class="postBody">
+            <view class="postBody__content">
+              fabulous! +1
+            </view>
+            <view class="postBody__date">
+              June 1
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

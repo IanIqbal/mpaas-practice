@@ -1,0 +1,7 @@
+<view class="page">
+  <view class="page-section">
+    <view>
+      <button type="primary" onTap="tinyToNative">Click to trigger customizationAPI</button>
+    </view>
+  </view>
+</view>

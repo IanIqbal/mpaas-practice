@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {
+    "button": "antd-mini/es/Button/index",
+    "icon": "antd-mini/es/Icon/index",
+    "popup": "antd-mini/es/Popup/index",
+    "transaction-detail":"/components/transaction-detail/transaction-detail"
+  }
+}

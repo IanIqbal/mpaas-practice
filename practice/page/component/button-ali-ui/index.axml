@@ -1,0 +1,43 @@
+<view class="container">
+  <button onTap="onTest" showLoading="{{showLoading}}" dataName="{{dataName}}" type="{{type}}" subtitle="{{subtitle}}" disabled="{{disabled}}" shape="{{shape}}" capsuleSize="{{capsuleSize}}" capsuleMinWidth="{{capsuleMinWidth}}">
+    {{title}}
+  </button>
+
+  <view class="title">Main title</view>
+  <input value="{{title}}" onInput="titleChange" class="inputItem"/>
+  <view class="title">Subtitle</view>
+  <input value="{{subtitle}}" onInput="subtitleChange" class="inputItem"/>
+  <view class="title">Button type</view>
+  <radio-group class="radio-group" onChange="typeChange" name="type">
+    <label class="radio" a:for="{{types}}" key="label-{{index}}">
+      <radio value="{{item.name}}" checked="{{item.checked}}" />
+      <text class="radio-text">{{item.value}}</text>
+    </label>
+  </radio-group>
+  <view class="title">shape</view>
+  <radio-group class="radio-group" onChange="shapeChange" name="shape">
+    <label class="radio" a:for="{{shapes}}" key="label-{{index}}">
+      <radio value="{{item.name}}" checked="{{item.checked}}" />
+      <text class="radio-text">{{item.value}}</text>
+    </label>
+  </radio-group>
+  <view class="title">Capsule button size</view>
+  <radio-group class="radio-group" onChange="sizeChange" name="size">
+    <label class="radio" a:for="{{capsuleSizes}}" key="label-{{index}}">
+      <radio value="{{item.name}}" checked="{{item.checked}}" />
+      <text class="radio-text">{{item.value}}</text>
+    </label>
+  </radio-group>
+  <view class="changeItem">
+    <checkbox onChange='onDisableChange' id="disabled__"/>
+    <label for="disabled__" style="margin-left: 8rpx;">Disable</label>
+  </view>
+  <view class="changeItem">
+    <checkbox onChange='onMinWidthChange' id="miniBtn__"/>
+    <label for="miniBtn__" style="margin-left: 8rpx;">Whether to limit the minimum width of capsule button</label>
+  </view>
+  <view class="changeItem">
+    <checkbox onChange='onLoadingChange' id="loading__"/>
+    <label for="loading__" style="margin-left: 8rpx;">Whether to display loading</label>
+  </view>
+</view>

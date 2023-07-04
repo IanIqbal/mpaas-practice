@@ -1,0 +1,81 @@
+<view class="demo-item">
+  <notice
+    marqueeProps="{{marqueeProps}}"
+    enableMarquee="{{true}}"
+    show="{{closeShow}}"
+    type="{{noticeType}}"
+    mode="{{noticeMode}}"
+    action="{{actionText}}"
+    onClick="actionClick"
+    actionLeft="{{actionLeftText}}"
+    onClickLeft="linkActionClick">
+    Announcement bar display with infinite loop scrolling. If the text is not enough, continue to add text to make up the number.
+  </notice>
+</view>
+<view class="demo-item">
+  <notice
+    enableMarquee="{{true}}"
+    show="{{closeShow}}"
+    showIcon="{{false}}"
+    type="{{noticeType}}"
+    mode="{{noticeMode}}"
+    action="{{actionText}}"
+    onClick="actionClick"
+    actionLeft="{{actionLeftText}}"
+    onClickLeft="linkActionClick">
+    A scrolling notification bar showing the situation. If the text is not enough, continue to add text to make up the number. no icon
+  </notice>
+</view>
+<view class="demo-item">
+  <notice
+    show="{{closeShow}}"
+    type="{{noticeType}}"
+    mode="{{noticeMode}}"
+    action="{{actionText}}"
+    onClick="actionClick"
+    actionLeft="{{actionLeftText}}"
+    onClickLeft="linkActionClick">
+    A non-scrolling notification bar displays the situation.
+  </notice>
+</view>
+<view class="demo-item">
+  <notice
+    show="{{closeShow}}"
+    type="{{noticeType}}"
+    mode="{{noticeMode}}"
+    action="{{actionText}}"
+    onClick="actionClick"
+    actionLeft="{{actionLeftText}}"
+    onClickLeft="linkActionClick"
+    capsule="{{true}}"
+    capsuleItem="{{capsuleItem}}">{{capsuleItem.length > 0? capsuleItem.length + ' recommended offers':'No promotions to recommend'}}
+  </notice>
+</view>
+
+<view class="demo-title">type: </view>
+<radio-group class="radio-group" onChange="typeChange" name="type">
+  <label class="radio" a:for="{{type}}" key="label-{{index}}">
+    <radio value="{{item.name}}" checked="{{item.checked}}" />
+    <text class="radio-text">{{item.value}}</text>
+  </label>
+</radio-group>
+
+<view class="demo-title">mode: </view>
+<radio-group class="radio-group" onChange="modeChange" name="mode">
+  <label class="radio" a:for="{{mode}}" key="label-{{index}}">
+    <radio value="{{item.name}}" checked="{{item.checked}}" />
+    <text class="radio-text">{{item.value}}</text>
+  </label>
+</radio-group>
+
+<input placeholder="text on the right" value="{{actionText?actionText:''}}" onInput="getRightText" />
+<input placeholder="text on the left" a:if="{{actionText !== '' || noticeMode !== ''}}" onInput="getLeftText" />
+
+
+<view class="demo-title">Capsule Notice Board item: </view>
+<checkbox-group class="radio-group" onChange="capsuleItemChange" name="capsule">
+  <label class="checkbox" a:for="{{capsuleItemList}}" key="label-{{index}}">
+    <checkbox value="{{item.name}}" checked="{{item.checked}}" style="vertical-align: middle;" />
+    <image src='{{item.value}}' class="itemSize" />
+  </label>
+</checkbox-group>

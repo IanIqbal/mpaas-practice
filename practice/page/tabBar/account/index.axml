@@ -1,0 +1,56 @@
+<view id="container">
+  <view id="header-section">
+    <view id="avatar">
+      <icon className="icon" type="UserCircleOutline"  />
+    </view>
+    <view id="name">
+      <text>
+        {{username}}
+      </text>
+    </view>
+    <view id="qr">
+      <icon className="icon" type="SystemQRcodeOutline" />
+    </view>
+  </view>
+  <view>
+    <list className="list-title"   header="Kartu dan Transaksional" radius="{{radius}}">
+      <view a:for="{{ transactionalList }}" a:for-item="list">
+        
+        <list-item class="list-item" image="{{list.image}}" arrow="right" onTap="handleTap" data-info="{{list.info}}">
+         <text class="item-text">
+
+           {{list.info}}
+         </text> 
+        </list-item>
+      </view>
+    </list>
+
+    <list  className="list-title" header="Pengamanan Akun" radius="{{radius}}">
+      <view a:for="{{ pengamananList }}" a:for-item="list">
+        
+        <list-item class="list-item" image="{{list.image}}" arrow="right" onTap="handleTap" data-info="{{list.info}}">
+         <text class="item-text">
+
+           {{list.info}}
+         </text> 
+        </list-item>
+      </view>
+    </list>
+
+    <list className="list-title"   header="Lainnya" radius="{{radius}}">
+      <view a:for="{{ lainnyaList }}" a:for-item="list">
+        
+        <list-item class="list-item" image="{{list.image}}" arrow="right" onTap="handleTap" data-info="{{list.info}}">
+         <text class="item-text">
+
+           {{list.info}}
+         </text> 
+        </list-item>
+      </view>
+    </list>
+    
+  </view>
+  <view>
+    <button className="logOut-button" size="default"  type="text" onTap="logOut">Log out</button>
+  </view>
+</view>

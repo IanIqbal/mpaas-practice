@@ -1,0 +1,23 @@
+<view id="transaction-card">
+
+  <view id="info-section">
+    <image mode="scaleToFill" src={{item.thumbnail}} />
+    <view id="text-section">
+      <text id="text-title" >{{item.title}}</text>
+      <text id="text-brand" >{{item.brand}}</text>
+      <view id="price-section" >
+        <text id="original-price">{{item.formattedPrice}}</text>
+        <text id="discounted-price">{{item.formattedFinalPrice}}</text>
+      </view>
+    </view>
+  </view>
+  <view id="piece-section">
+    <icon type="DeleteOutline" data-id={{item.id}} onTap="deleteItem" />
+    <view id="button-section">
+      <button data-id={{item.id}} disabled={{item.stockSelected == 1? true: false}}  data-operation={{false}} size="small" type="text" icon="MinusOutline" onTap="changeStock" inline ></button>
+      <text >{{item.stockSelected}}</text>
+      <button data-id={{item.id}} data-operation={{true}} size="small" type="text" icon="AddOutline" onTap="changeStock" inline ></button>
+
+    </view>
+  </view>
+</view>

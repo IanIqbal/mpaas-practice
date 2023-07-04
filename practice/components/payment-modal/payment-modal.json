@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {
+    "selector": "antd-mini/es/Selector/index",
+    "button": "antd-mini/es/Button/index",
+    "modal": "antd-mini/es/Modal/index"
+
+  }
+}

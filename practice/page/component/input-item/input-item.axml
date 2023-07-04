@@ -1,0 +1,65 @@
+<view>
+  <view style="margin-top: 10px;"></view>
+  <list>
+    <input-item data-field="cardNo" 
+      clear="{{false}}" 
+      value="{{cardNo}}" 
+      className="dadada" 
+      placeholder="Issue Bank" 
+      onInput="onItemInput" 
+      onBlur="onItemBlur" 
+      onConfirm="onItemConfirm" 
+      controlled="{{true}}"
+      onClear="onClear">
+      Card Number
+      <view slot="extra" class="extra" onTap="onExtraTap"></view>
+    </input-item>
+    <input-item data-field="name" 
+      placeholder="name" 
+      type="text" 
+      value="{{name}}" 
+      clear="{{true}}" 
+      onInput="onItemInput" 
+      onClear="onClear">Name</input-item>
+    <input-item data-field="password" password="{{true}}"
+      placeholder="password">Password</input-item>
+    <input-item data-field="layerShow1" 
+      placeholder="layer is vertical order" 
+      type="text" 
+      layer="vertical"
+      value="{{layerShow1}}" 
+      clear="{{true}}" 
+      onInput="onItemInput" 
+      onClear="onClear">
+      vertical layer
+      <view onTap="onExtraTap" slot="extra">
+        <am-icon type="phone-book_" size="24" color="#1677ef"></am-icon>
+      </view>
+    </input-item>
+    <input-item data-field="layerShow2"
+      placeholder="layer is vertical order" 
+      type="text" 
+      layer="vertical"
+      value="{{layerShow2}}" 
+      clear="{{true}}" 
+      onInput="onItemInput" 
+      onClear="onClear">
+      vertical layer
+    </input-item>
+    <input-item data-field="layerShow3" 
+      placeholder="layer is vertical order" 
+      type="text" 
+      layer="vertical"
+      disabled="{{true}}"
+      value="{{layerShow3}}" 
+      clear="{{true}}" 
+      onInput="onItemInput" 
+      onClear="onClear">
+      vertical layer
+      <view onTap="onExtraTap" slot="extra">
+        <am-icon type="phone-book_" size="24" color="#1677ef"></am-icon>
+      </view>
+    </input-item>
+    <input-item data-field="remark" placeholder="remark"></input-item>
+  </list>
+</view>

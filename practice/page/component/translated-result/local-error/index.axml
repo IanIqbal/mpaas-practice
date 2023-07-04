@@ -1,0 +1,8 @@
+<view>
+  <page-result
+    type="error"
+    local="{{true}}"
+    brief="I'm too busy，Objective please wait" />
+  <view style="height: 150px; margin: 10px; background: #dddddd;" />
+  <view style="height: 150px; margin: 10px; background: #dddddd;" />
+</view>

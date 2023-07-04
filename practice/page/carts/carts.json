@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "cart-card":"/components/cart-card/cart-card",
+    "button": "antd-mini/es/Button/index",
+    "modal": "antd-mini/es/Modal/index",
+    "payment-modal":"/components/payment-modal/payment-modal"
+  }
+}

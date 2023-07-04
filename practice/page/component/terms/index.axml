@@ -1,0 +1,67 @@
+<view>
+  <terms onSelect="onSelect" related="{{c1.related}}" hasDesc="{{c1.hasDesc}}" agreeBtn="{{c1.agreeBtn}}" cancelBtn="{{c1.cancelBtn}}">
+    <view class="text" slot="header">
+      <text>
+        agree
+        <navigator class="link" url="/page/tabBar/component/index">《User License Agreement》</navigator>
+      </text>
+    </view>
+  </terms>
+  <text class="title">double button</text>
+</view>
+<view>
+  <terms onSelect="onSelect" fixed="{{c2.fixed}}" related="{{c2.related}}" hasDesc="{{c2.hasDesc}}" agreeBtn="{{c2.agreeBtn}}" cancelBtn="{{c2.cancelBtn}}" shape="{{c2.shape}}" capsuleMinWidth="{{c2.capsuleMinWidth}}" capsuleSize="{{c2.capsuleSize}}">
+    <view class="text" slot="desc">
+      <text>
+        see
+        <navigator class="link" url="/page/tabBar/component/index">《ETC Service User Agreement》</navigator>
+        ，Authorize the ETC service to obtain the ID card and delivery address to apply for ETC, and pay attention to the owner's service life number for review.；
+      </text>
+    </view>
+  </terms>
+  <text class="title">with auxiliary description</text>
+</view>
+<view>
+  <terms onSelect="onSelect" fixed="{{c3.fixed}}" related="{{c3.related}}" hasDesc="{{c3.hasDesc}}" agreeBtn="{{c3.agreeBtn}}" cancelBtn="{{c3.cancelBtn}}">
+    <view class="text" slot="header">
+      <text>
+        Agree
+        <navigator class="link" url="/page/tabBar/component/index">《User License Agreement》</navigator>
+      </text>
+    </view>
+  </terms>
+  <text class="title">Bundle agreement checked</text>
+</view>
+<view>
+  <terms onSelect="onSelect" fixed="{{c4.fixed}}" related="{{c4.related}}" hasDesc="{{c4.hasDesc}}" agreeBtn="{{c4.agreeBtn}}" cancelBtn="{{c4.cancelBtn}}" shape="{{c4.shape}}" capsuleMinWidth="{{c4.capsuleMinWidth}}" capsuleSize="{{c4.capsuleSize}}">
+    <view class="text" slot="header">
+      <text>
+        Agree
+        <navigator class="link" url="/page/tabBar/component/index">《User License Agreement》</navigator>
+      </text>
+    </view>
+  </terms>
+  <text class="title">Bundle agreement is not selected</text>
+</view>
+<view>
+  <terms fixed="{{c5.fixed}}" related="{{c5.related}}" hasDesc="{{c5.hasDesc}}"  agreeBtn="{{c5.agreeBtn}}" cancelBtn="{{c5.cancelBtn}}" shape="{{c5.shape}}" capsuleMinWidth="{{c5.capsuleMinWidth}}" capsuleSize="{{c5.capsuleSize}}">
+    <view class="text" slot="header">
+      <text>
+        Agree
+        <navigator class="link" url="/page/tabBar/component/index">《User License Agreement》</navigator>
+      </text>
+    </view>
+  </terms>
+  <text class="title">No bundling agreement</text>
+</view>
+<view style="padding-bottom:30px;">
+  <terms fixed="{{c6.fixed}}" related="{{c6.related}}" hasDesc="{{c6.hasDesc}}" agreeBtn="{{c6.agreeBtn}}" cancelBtn="{{c6.cancelBtn}}" shape="{{c6.shape}}" capsuleMinWidth="{{c6.capsuleMinWidth}}" capsuleSize="{{c6.capsuleSize}}">
+    <view class="text" slot="header">
+      <text>
+        Agree
+        <navigator class="link" url="/page/tabBar/component/index">《User License Agreement》</navigator>
+      </text>
+    </view>
+  </terms>
+  <text class="title">Bottom suction</text>
+</view>

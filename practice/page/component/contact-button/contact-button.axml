@@ -1,0 +1,12 @@
+<view class="page">
+  <view class="page-description">Arouse intelligent customer service</view>
+  <view class="page-section">
+    <view class="page-section-title">Click the icon below to invoke the intelligent customer service function</view>
+    <view class="page-section-demo">
+      <contact-button tnt-inst-id="FRYFEGCN" scene="SCE00000725" size="46" color="#e15151" />
+    </view>
+    <view class="page-section-demo">
+      <contact-button tnt-inst-id="FRYFEGCN" scene="SCE00000725" size="46" icon="{{src}}" />
+    </view>
+  </view>
+</view>

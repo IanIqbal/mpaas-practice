@@ -1,0 +1,54 @@
+<view>
+  <view class="demo-title">Basic usage</view>
+  <collapse
+    className="demo-collapse"
+    collapseKey="collapse1"
+    activeKey="{{['item-11', 'item-13']}}"
+    onChange="onChange"
+  >
+    <collapse-item header="Title1" itemKey="item-11" collapseKey="collapse1">
+      <view class="item-content">
+        <block a:for="{{randomLine}}">
+          <view>Content area with adaptive height
+{{index + 1}} that 's ok</view>
+        </block>
+      </view>
+    </collapse-item>
+    <collapse-item header="Title2" itemKey="item-12" collapseKey="collapse1">
+      <view class="item-content content2">
+        <view>Content Area</view>
+      </view>
+    </collapse-item>
+    <collapse-item header="Title3" itemKey="item-13" collapseKey="collapse1">
+      <view class="item-content content3">
+        <view>Content Area</view>
+      </view>
+    </collapse-item>
+  </collapse>
+  <view class="demo-title">Accordion mode</view>
+  <collapse
+    className="demo-collapse"
+    collapseKey="collapse2"
+    activeKey="{{['item-21', 'item-23']}}"
+    onChange="onChange"
+    accordion="{{true}}"
+  >
+    <collapse-item header="Title1" itemKey="item-21" collapseKey="collapse2">
+      <view class="item-content">
+        <block a:for="{{randomLine}}">
+          <view>Content area with height {{index + 1}} </view>
+        </block>
+      </view>
+    </collapse-item>
+    <collapse-item header="Title2" itemKey="item-22" collapseKey="collapse2">
+      <view class="item-content content2">
+        <view>content area</view>
+      </view>
+    </collapse-item>
+    <collapse-item header="Title3" itemKey="item-23" collapseKey="collapse2">
+      <view class="item-content content3">
+        <view>content area</view>
+      </view>
+    </collapse-item>
+  </collapse>  
+</view>

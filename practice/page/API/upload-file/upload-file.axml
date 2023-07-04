@@ -1,0 +1,3 @@
+<view class="page">
+  <button type="primary" onTap="uploadFile">Upload pictures</button>
+</view>

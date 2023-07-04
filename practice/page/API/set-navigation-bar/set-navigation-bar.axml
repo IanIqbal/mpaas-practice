@@ -1,0 +1,23 @@
+<view class="page">
+  <view class="page-description">Set navigation bar API</view>
+  <form onSubmit="setNavigationBar" style="align-self:stretch">
+    <view class="page-section">
+      <view class="page-section-demo">
+        <input class="page-body-form-value" type="text" placeholder="title" name="title"></input>
+        <input class="page-body-form-value" type="text" placeholder="Navigation bar background color" name="backgroundColor"></input>
+        <input class="page-body-form-value" type="text" placeholder="Navigation bar bottom border color" name="borderBottomColor"></input>
+        <input class="page-body-form-value" type="text" placeholder="Navigation bar picture address" name="image"></input>
+      </view>
+      <view class="page-section-btns">
+        <button type="primary" size="mini" formType="submit">set up</button>
+        <button type="primary" size="mini" onTap="resetNavigationBar">Reset</button>
+      </view>
+    </view>
+  </form>
+  <view class="tips">
+    tips:
+   <view class="item">1. image:Picture link address，must https，Please use one3xHD image。If set image，be title Parameter failure</view>
+   <view class="item">2. backgroundColor: Navigation bar background color，support 16 Hexadecimal color value</view>
+   <view class="item">3. borderBottomColor: Navigation bar bottom border color，support16Hexadecimal color value。If set backgroundColor，borderBottomColor Will not take effect，Default and backgroundColor Same color。</view>
+  </view>
+</view>

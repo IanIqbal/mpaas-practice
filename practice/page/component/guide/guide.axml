@@ -1,0 +1,12 @@
+<guide
+  show="{{guideShow}}"
+  hasJump="{{guideJump}}"
+  guideList="{{list}}"
+  btn_next="Look at the next map"
+  btn_jump="Direct close，Skip without looking"
+  btn_over="That's it😀ah"
+  onGuideOver="closeGuide"
+></guide>
+
+<button size="default" type="primary" onTap="onShowJumpGuide">View skippable guides</button>
+<button size="default" type="primary" onTap="onShowGuide">View common guide</button>

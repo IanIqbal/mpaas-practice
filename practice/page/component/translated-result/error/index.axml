@@ -1,0 +1,8 @@
+<view>
+  <page-result
+    type="error"
+    title="Page encountered some small problems"
+    brief="Delay your time，We are deeply sorry"
+    footer="{{footer}}"
+  />
+</view>

@@ -1,0 +1,6 @@
+#main-container {
+min-height: 99.5vh;
+min-width: 100vw;
+padding-top: 5px;
+background-size: cover;
+}

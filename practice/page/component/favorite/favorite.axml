@@ -1,0 +1,13 @@
+<view class="favorite">
+  <favorite>Favorite applet example</favorite>
+  <view class="name">
+    <text>Favorite</text>
+  </view>
+  <view class="title">
+    <view>Collection components</view>
+    <view>favorite</view>
+  </view>
+  <view class="explanation">
+    Prompt user to favorite applet，After collection，Users can directly enter from the widget collection，The probability of reuse is greatly increased。According to the user's current favorite status，Determine whether to display components，And according to the user's first favorite or close favorite component behavior，Control display content and fatigue。
+  </view>
+</view>

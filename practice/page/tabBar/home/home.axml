@@ -1,0 +1,55 @@
+<view class="container">
+  <view id="header">
+    <image mode="scaleToFill" src="/image/logo-bni.png" />
+    <view id="right-header">
+      <icon className="bell" type="BellOutline" />
+      <button size="small" icon="UserOutline" type="default" inline danger onTap="handleTap">
+      </button>
+    </view>
+  </view>
+  <view id="account-section">
+    <view id="avatar-section">
+      <icon className="avatar" type="UserCircleOutline" />
+    </view>
+    <view>
+      <view class="account-info-list">
+        <text id="username-text">{{username}}</text>
+      </view>
+      <view class="account-info-list">
+        <view>
+          <text id="rekening-text" >{{rekening}}</text>
+        </view>
+      </view>
+      <view class="account-info-list">
+        <text>{{formattedSaldo}}</text>
+      </view>
+    </view>
+  </view>
+  <view id="point-section">
+    <view>
+      Point
+    </view>
+    <button size="small" type="text" inline >Atur Menu</button>
+  </view>
+  <view id="menu-section">
+    <block a:for="{{ menus }}" a:for-item="menu" >
+      <view  id="menu-card" onTap="toMiniApp" data-page={{ menu.url? menu.url : menu.name}} >
+        <view id="icon-menu" >
+          <icon className="icon" type={{menu.logo}}  />
+        </view>
+        <view id="text-menu">
+          <text>{{menu.name}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+
+  
+  <view id="banner-section">
+    <block a:for="{{ banners }}" a:for-item="banner" >
+      <view class="banner-card">
+        <image mode="aspectFit" src="{{banner.banner}}" />
+      </view>
+    </block>
+  </view>
+</view>

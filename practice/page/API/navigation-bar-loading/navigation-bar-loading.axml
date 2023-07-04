@@ -1,0 +1,6 @@
+<view class="page">
+  <view class="page-section">
+    <button type="primary" onTap="showNavigationBarLoading">Show load animation</button>
+    <button onTap="hideNavigationBarLoading">Hide loading animation</button>
+  </view>
+</view>

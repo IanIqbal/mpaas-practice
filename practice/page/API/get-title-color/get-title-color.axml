@@ -1,0 +1,12 @@
+<view>
+  <view class="page-section-demo">
+    <text>Current navigation bar background color:
+    </text>
+    <input type="text" disabled="{{true}}" value="{{titleColor.color}}">
+    </input>
+  </view>
+  <view class="page-section-btns">
+    <view onTap="getTitleColor">Get navigation bar background color
+    </view>
+  </view>
+</view>

@@ -1,0 +1,9 @@
+<view class="page">
+  <view class="page-section">
+    <view class="page-section-btns">
+      <view onTap="chooseImage">Select photos.</view>
+      <view onTap="previewImage">Preview photos</view>
+      <view onTap="saveImage">Save photos</view>
+    </view>
+  </view>
+</view>

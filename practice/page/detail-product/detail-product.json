@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "button": "antd-mini/es/Button/index",
+    "icon": "antd-mini/es/Icon/index",
+    "toast":"antd-mini/es/Toast/index"
+  }
+}

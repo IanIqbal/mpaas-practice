@@ -1,0 +1,312 @@
+<view class="new-list-container">
+  <list>
+    <view slot="header">New List Demo</view>
+    <list-item thumb="{{useThumb ? thumb : ''}}" 
+      arrow="{{arrow}}" 
+      index="{{index}}" 
+      borderRadius="{{borderRadius}}"
+      upperSubtitle="{{upperSubtitle}}" 
+      lowerSubtitle="{{lowerSubtitle}}" 
+      titlePosition="{{titlePositions[titlePosIndex]}}" 
+      thumbSize="{{thumbSize}}"
+      last="{{true}}">
+        {{title}}
+        <tag a:if="{{primarySlotTypes[titleSlotIndex] === 'label'}}" size="sm" slot="afterTitle">{{titleTagText}}</tag>
+        <tag a:if="{{primarySlotTypes[upperSlotIndex] === 'label'}}" size="sm" slot="afterUpperSubtitle">{{upperTagText}}</tag>
+        <tag a:if="{{primarySlotTypes[lowerSlotIndex] === 'label'}}" size="sm" slot="afterLowerSubtitle">{{lowerTagText}}</tag>
+        <am-icon a:if="{{primarySlotTypes[titleSlotIndex] === 'Question mark icon'}}" size="{{titleIconSize}}" type="question_" slot="afterTitle" color="#1677ff" />
+        <am-icon a:if="{{primarySlotTypes[upperSlotIndex] === 'Question mark icon'}}" size="{{upperIconSize}}" type="question_" slot="afterUpperSubtitle" color="#1677ff" />
+        <am-icon a:if="{{primarySlotTypes[lowerSlotIndex] === 'Question mark icon'}}" size="{{lowerIconSize}}" type="question_" slot="afterLowerSubtitle" color="#1677ff" />
+
+        <am-icon a:if="{{supSlotTypes[supSlotIndex] === 'Question mark icon'}}" type="question_" slot="supporting" color="#1677ff" size="{{supIconSize}}" />
+        <am-radio checked="{{true}}" a:if="{{supSlotTypes[supSlotIndex] === 'Tick Icon'}}" slot="supporting" />
+        <tag a:if="{{supSlotTypes[supSlotIndex] === 'label'}}" size="sm" slot="supporting">{{supTagText}}</tag>
+        <view a:if="{{supSlotTypes[supSlotIndex] === 'Text content'}}" slot="supporting">{{supText}}</view>
+        
+        <am-icon a:if="{{secSlotTypes[secSlotIndex] === 'Question mark icon'}}" type="question_" slot="extra" color="#1677ff" size="{{secIconSize}}" />
+        <am-radio checked="{{true}}" a:if="{{secSlotTypes[secSlotIndex] === 'Tick Icon'}}" slot="extra" />
+        <tag a:if="{{secSlotTypes[secSlotIndex] === 'label'}}" size="sm" slot="extra">{{secTagText}}</tag>
+        <view a:if="{{secSlotTypes[secSlotIndex] === 'Text content'}}" slot="extra">{{secText}}</view>
+        <am-switch a:if="{{secSlotTypes[secSlotIndex] === 'switch'}}" slot="extra" />
+        <am-button a:if="{{secSlotTypes[secSlotIndex] === 'Capsule button'}}"	shape="capsule"	type="ghost"  slot="extra" >{{secText}}</am-button>
+        <list-secondary 
+          a:if="{{secSlotTypes[secSlotIndex] === 'list-secondary'}}" 
+          title="{{secondary.title}}" 
+          subtitle="{{secondary.subtitle}}" 
+          thumb="{{secondary.useThumb ? secondary.thumb : ''}}"
+          thumbSize="{{secondary.thumbSize}}"
+          slot="extra" ></list-secondary>
+    </list-item>
+  </list>
+  <view class="gap"/>
+  <view class="setting">
+    <list-item>
+      Fillet or not 
+      <am-switch slot="extra" 
+        checked="{{borderRadius}}" 
+        onChange="setInfo"
+        data-name="borderRadius"
+        controlled />
+    </list-item>
+    <view class="gap" />
+    <title>PrimaryLocale</title>
+    <list-item>
+      thumbnail 
+      <am-switch slot="extra" 
+        checked="{{useThumb}}" 
+        onChange="setInfo"
+        data-name="useThumb"
+        controlled />
+    </list-item>
+    <input-item a:if="{{useThumb}}" 
+      placeholder="automatic" 
+      value="{{thumbSize}}"
+      onInput="setInfo"
+      data-name="thumbSize"
+    >
+      thumbnail size ：
+      <view slot="extra">px</view>
+    </input-item>
+    <view class="gap"/>
+    <list-item>
+      arrow 
+      <am-switch slot="extra" 
+        checked="{{arrow}}" 
+        onChange="setInfo"
+        data-name="arrow"
+        controlled />
+    </list-item>
+    <view class="gap"/>
+    <picker onChange="setInfo" value="{{titlePosIndex}}" range="{{titlePositions}}" data-name="titlePosIndex">
+      <view class="row">
+        <view class="row-title">Title Position</view>
+        <view class="row-extra">Current selection：{{titlePositions[titlePosIndex]}}</view>
+        <am-icon type="right" size="18" color="#cccc"/>
+      </view>
+    </picker>
+    <view class="gap"/>
+    <input-item
+      placeholder="nothing" 
+      value="{{title}}"
+      onInput="setInfo"
+      data-name="title"
+    >
+      Title Content:
+    </input-item>
+    <input-item
+      placeholder="nothing" 
+      value="{{upperSubtitle}}"
+      onInput="setInfo"
+      data-name="upperSubtitle"
+    >
+      Top subtitle content:
+    </input-item>
+    <input-item
+      placeholder="nothing" 
+      value="{{lowerSubtitle}}"
+      onInput="setInfo"
+      data-name="lowerSubtitle"
+    >
+      Next subtitle content:
+    </input-item>
+    <view class="gap"/>
+    <picker onChange="setInfo" value="{{titleSlotIndex}}" range="{{primarySlotTypes}}" data-name="titleSlotIndex">
+      <view class="row">
+        <view class="row-title">Title slot contents</view>
+        <view class="row-extra">Current selection：{{primarySlotTypes[titleSlotIndex]}}</view>
+        <am-icon type="right" size="18" color="#cccc"/>
+      </view>
+    </picker>
+    <input-item
+      placeholder="nothing" 
+      value="{{titleTagText}}"
+      onInput="setInfo"
+      data-name="titleTagText"
+      a:if="{{primarySlotTypes[titleSlotIndex] === 'label'}}"
+    >
+      Label content:
+    </input-item>
+    <input-item
+      placeholder="automatic" 
+      value="{{titleIconSize}}"
+      onInput="setInfo"
+      data-name="titleIconSize"
+      a:if="{{primarySlotTypes[titleSlotIndex] === 'Question mark icon'}}"
+    >
+      Icon size:
+    </input-item>
+    <view class="gap"/>
+    <picker onChange="setInfo" value="{{upperSlotIndex}}" range="{{primarySlotTypes}}" data-name="upperSlotIndex">
+      <view class="row">
+        <view class="row-title">Upper subtitle slot</view>
+        <view class="row-extra">Current selection：{{primarySlotTypes[upperSlotIndex]}}</view>
+        <am-icon type="right" size="18" color="#cccc"/>
+      </view>
+    </picker>
+    <input-item
+      placeholder="automatic" 
+      value="{{upperTagText}}"
+      onInput="setInfo"
+      data-name="upperTagText"
+      a:if="{{primarySlotTypes[upperSlotIndex] === 'label'}}"
+    >
+      Label content:
+    </input-item>
+    <input-item
+      placeholder="automatic" 
+      value="{{upperIconSize}}"
+      onInput="setInfo"
+      data-name="upperIconSize"
+      a:if="{{primarySlotTypes[upperSlotIndex] === 'Question mark icon'}}"
+    >
+      Icon size:
+    </input-item>
+    <view class="gap"/>
+    <picker onChange="setInfo" value="{{lowerSlotIndex}}" range="{{primarySlotTypes}}" data-name="lowerSlotIndex">
+      <view class="row">
+        <view class="row-title">Lower subtitle slot</view>
+        <view class="row-extra">Current selection：{{primarySlotTypes[lowerSlotIndex]}}</view>
+        <am-icon type="right" size="18" color="#cccc"/>
+      </view>
+    </picker>
+    <input-item
+      placeholder="automatic" 
+      value="{{lowerTagText}}"
+      onInput="setInfo"
+      data-name="lowerTagText"
+      a:if="{{primarySlotTypes[lowerSlotIndex] === 'label'}}"
+    >
+      Label content:
+    </input-item>
+    <input-item
+      placeholder="automatic" 
+      value="{{lowerIconSize}}"
+      onInput="setInfo"
+      data-name="lowerIconSize"
+      a:if="{{primarySlotTypes[lowerSlotIndex] === 'Question mark icon'}}"
+    >
+      Icon size:
+    </input-item>
+    <view class="gap"/>
+    <view class="gap"/>
+    <title>SecondaryLocale</title>
+    <picker onChange="setInfo" value="{{secSlotIndex}}" range="{{secSlotTypes}}" data-name="secSlotIndex">
+      <view class="row">
+        <view class="row-title">secondaryslot </view>
+        <view class="row-extra">Current selection：{{secSlotTypes[secSlotIndex]}}</view>
+        <am-icon type="right" size="18" color="#cccc"/>
+      </view>
+    </picker>
+    <input-item
+      placeholder="automatic" 
+      value="{{secIconSize}}"
+      onInput="setInfo"
+      data-name="secIconSize"
+      a:if="{{secSlotTypes[secSlotIndex].includes('Icon')}}"
+    >
+      Icon size:
+    </input-item>
+    <input-item
+      placeholder="nothing" 
+      value="{{secTagText}}"
+      onInput="setInfo"
+      data-name="secTagText"
+      a:if="{{secSlotTypes[secSlotIndex] === 'label'}}"
+    >
+      Label content:
+    </input-item>
+    <input-item
+      placeholder="nothing" 
+      value="{{secText}}"
+      onInput="setInfo"
+      data-name="secText"
+      a:if="{{secSlotTypes[secSlotIndex] === 'Text content'}}"
+    >
+      Text content:
+    </input-item>
+    <input-item
+      placeholder="nothing" 
+      value="{{secText}}"
+      onInput="setInfo"
+      data-name="secText"
+      a:if="{{secSlotTypes[secSlotIndex] === 'Capsule button'}}"
+    >
+      Button content:
+    </input-item>
+    <view a:if="{{secSlotTypes[secSlotIndex] === 'list-secondary'}}">
+      <input-item
+        placeholder="nothing" 
+        value="{{secondary.title}}"
+        onInput="setSecInfo"
+        data-name="title"
+      >
+        title:
+      </input-item>
+      <input-item
+        placeholder="nothing" 
+        value="{{secondary.subtitle}}"
+        onInput="setSecInfo"
+        data-name="subtitle"
+      >
+        Subtitle:
+      </input-item>
+      <list-item>
+        thumbnail
+        <am-switch 
+          slot="extra" 
+          checked="{{secondary.useThumb}}"
+          onChange="setSecInfo"
+          data-name="useThumb"
+          controlled
+          />
+      </list-item>
+      <input-item
+        a:if="{{secondary.useThumb}}"
+        placeholder="nothing" 
+        value="{{secondary.thumbSize}}"
+        onInput="setSecInfo"
+        data-name="thumbSize"
+      >
+        thumbnail size :
+        <view slot="extra">px</view>
+      </input-item>
+    </view>
+    <view class="gap"/>
+    <view class="gap"/>
+    <title>SupportingLocale</title>
+    <picker onChange="setInfo" value="{{supSlotIndex}}" range="{{supSlotTypes}}" data-name="supSlotIndex">
+      <view class="row">
+        <view class="row-title">supportingslot </view>
+        <view class="row-extra">Current selection：{{supSlotTypes[supSlotIndex]}}</view>
+        <am-icon type="right" size="18" color="#cccc"/>
+      </view>
+    </picker>
+    <input-item
+      placeholder="automatic" 
+      value="{{supIconSize}}"
+      onInput="setInfo"
+      data-name="supIconSize"
+      a:if="{{supSlotTypes[supSlotIndex].includes('Icon')}}"
+    >
+      Icon size:
+    </input-item>
+    <input-item
+      placeholder="nothing" 
+      value="{{supTagText}}"
+      onInput="setInfo"
+      data-name="supTagText"
+      a:if="{{supSlotTypes[supSlotIndex] === 'label'}}"
+    >
+      Label content:
+    </input-item>
+    <input-item
+      placeholder="nothing" 
+      value="{{supText}}"
+      onInput="setInfo"
+      data-name="supText"
+      a:if="{{supSlotTypes[supSlotIndex] === 'Text content'}}"
+    >
+      Text content:
+    </input-item>
+  </view>
+</view>

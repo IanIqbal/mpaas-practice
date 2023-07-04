@@ -1,0 +1,9 @@
+<view class="page">
+  <view class="page-description">Custom analysis API</view>
+  <view class="page-section">
+    <view class="page-section-title">my.reportAnalytics</view>
+    <view class="page-section-demo">
+      <view class="report" onTap="reportAnalytics">Custom analysis</view>
+    </view>
+  </view>
+</view>

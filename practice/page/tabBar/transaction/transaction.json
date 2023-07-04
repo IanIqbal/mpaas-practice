@@ -1,0 +1,7 @@
+{ 
+  "defaultTitle": "Transaction",
+  "titleBarColor": "#262833",
+  "usingComponents": {
+    "transaction-card":"/components/transaction-card/transaction-card"
+  }
+}

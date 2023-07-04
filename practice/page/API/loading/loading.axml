@@ -1,0 +1,10 @@
+<view class="page">
+  <view class="page-section">
+    <view class="page-section-title">
+      display loading after，Will cover the entireh5page，page元素不能交互。
+    </view>
+    <view class="page-section-btns">
+      <view onTap="showLoading">Show loading tips</view>
+    </view>
+  </view>
+</view>

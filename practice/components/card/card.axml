@@ -1,0 +1,13 @@
+<view id="card" >
+
+  <text id="author" >{{quote.author}}</text>
+  <text id="quote">{{quote.quote}}</text>
+  <!-- <card thumb={{thumb}} id="card"
+    title={{quote.author}} 
+    subTitle={{quote.quote}} 
+    onCardClick="toggle" 
+    onActionClick="onActionClick" 
+    onExtraActionClick="onExtraActionClick" 
+    info="Click Third card" 
+  /> -->
+</view>

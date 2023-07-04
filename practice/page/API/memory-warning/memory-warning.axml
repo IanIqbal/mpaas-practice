@@ -1,0 +1,7 @@
+<view class="page">
+
+  <button type="primary" onTap="onMemoryWarning">
+    Start listening for insufficient memory alarm
+  </button>
+
+</view>

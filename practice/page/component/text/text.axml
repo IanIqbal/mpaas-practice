@@ -1,0 +1,12 @@
+<view class="page">
+  <view class="page-description">
+    <view class="text-demo-title">
+      <text class="text-demo-text">This is a text        \n<text>\</text><text>n</text> can change a line。</text>
+    </view>  
+  </view>
+  <view class="page-section">
+    <view class="page-section-demo">
+      <text>{{text}}</text>
+    </view>
+  </view>
+</view>

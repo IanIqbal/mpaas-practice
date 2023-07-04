@@ -1,0 +1,11 @@
+<view class="page">
+  <view class="page-section">
+    <button type="primary" onTap="navigateTo">Jump to new page</button>
+    <button type="primary" onTap="navigateBack">Back to previous page</button>
+    <button type="primary" onTap="redirectTo">Open on current page - Alert</button>
+    <button type="primary" onTap="switchTab">Jump Tab - assembly</button>
+    <view class="page-description">bookDemoNo applet jump function，Show only API Use of，Please refer to the official applet documentation for specific access API Applet mutual jump part of。</view>
+    <button type="primary" onTap="navigateToMiniProgram">Jump to applet</button>
+    <button type="primary" onTap="navigateBackMiniProgram">Jump back to applet</button>
+  </view>
+</view>

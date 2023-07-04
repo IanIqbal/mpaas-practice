@@ -1,0 +1,9 @@
+<view>
+  <page-result
+    type="redpacket"
+    local="{{true}}"
+    title="Nothing there?"
+    brief="Red envelope has been cleared"
+  />
+</view>
+

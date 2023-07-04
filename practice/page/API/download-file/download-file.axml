@@ -1,0 +1,3 @@
+<view class="container">
+  <button onTap="download">Download pictures and display</button>
+</view>

@@ -1,0 +1,48 @@
+#canvas-container {
+  position: fixed;
+  z-index: 2;
+  top: 0px;
+  left: 0px;
+  height: 50px;
+  width: 100%;
+}
+#canvas{
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(227,143,18,1) 0%, rgba(0,212,255,1) 100%);
+}
+
+
+#quotes-container{
+  position: relative;
+}
+
+#sandbox-header {
+  color: black;
+  font-size: x-large;
+}
+
+.quote-list {
+  
+  margin: 40px 5px;
+  padding: 3px;
+  position: relative;
+  z-index: 3;
+
+  /* From https://css.glass */
+background: rgba(0, 180, 216, 0.54);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(14.2px);
+-webkit-backdrop-filter: blur(14.2px);
+border: 1px solid rgba(0, 180, 216, 1);
+}
+
+.quote-list text {
+  color: whitesmoke;
+}
+
+#author-name {
+  display: flex;
+  justify-content: end;
+  margin-top: 5px;
+}

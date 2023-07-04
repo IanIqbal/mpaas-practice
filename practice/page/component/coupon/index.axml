@@ -1,0 +1,102 @@
+<view style="margin-top: 10px;"></view>
+<view>
+  <coupon title="Coupon Title1"
+    onCouponClick="onCouponClick" 
+    thumb="{{thumb}}">
+  </coupon>
+</view>
+<view>
+  <coupon title="Coupon Title2" 
+    subtitle="Coupon Sub Title" 
+    onCouponClick="onCouponClick" 
+    thumb="{{thumb}}">
+  </coupon>
+</view>
+<view>
+  <coupon title="Coupon Title3" 
+    subtitle="Coupon Sub Title" 
+    used="{{true}}"
+    onCouponClick="onCouponClick" 
+    thumb="{{thumb}}">
+    <view slot="date">Validity period：2020.02.14-2020.02.29</view>
+    <view slot="detail" class="coupon_rule">
+      <text>1、Detailed rule description detailed rule description detailed rule description detailed rule description detailed rule description detailed rule description detailed rule description；</text>
+      <text>2、Detailed rule description detailed rule description detailed rule description detailed rule description detailed rule description；</text>
+    </view>
+  </coupon>
+</view>
+<view>
+  <coupon title="Coupon Title4" 
+    subtitle="Coupon Sub Title" 
+    onCouponClick="onCouponClick"
+    thumb="{{thumb}}">
+    <view slot="category" class="categoryDemo">
+      <text class="price">50</text><text class="unit">element</text><text class="type">Full discount</text>
+    </view>
+    <button shape="capsule" slot="action" onTap="onButtonTap" type="ghost">Use Now</button>
+    <view slot="date">Validity period：2020.02.14-2020.02.29</view>
+    <view slot="detail" class="coupon_rule">
+      <text>1、Detailed rule description detailed rule description detailed rule description detailed rule description detailed rule description detailed rule description detailed rule description；</text>
+      <text>2、Detailed rule description detailed rule description detailed rule description detailed rule description detailed rule description；</text>
+    </view>
+  </coupon>
+</view>
+<view>
+  <coupon title="Coupon Title5" 
+    subtitle="Coupon Sub Title" 
+    onCouponClick="onCouponClick"
+    extra="{{false}}">
+    <button shape="capsule" slot="action" onTap="onButtonTap" type="ghost">Use Now</button>
+    <view slot="date">Validity period：2020.02.14-2020.02.29</view>
+    <view slot="detail" class="coupon_rule">
+      <text>1、Detailed rule description detailed rule description detailed rule description detailed rule description detailed rule description detailed rule description detailed rule description；</text>
+      <text>2、Detailed rule description detailed rule description detailed rule description detailed rule description detailed rule description；</text>
+    </view>
+  </coupon>
+</view>
+<view>
+  <coupon title="Coupon Title6" 
+    subtitle="Coupon Sub Title" 
+    onCouponClick="onCouponClick" 
+    thumb="{{thumb}}"
+  >
+    <button shape="capsule" slot="action" onTap="onButtonTap" type="ghost">Use Now</button>
+  </coupon>
+</view>
+<view>
+  <coupon title="Coupon Title7" 
+    subtitle="Coupon Sub Title"
+    moreBtn="See more"
+    moreHide="{{false}}"
+    onCouponClick="onCouponClick" 
+    thumb="{{thumb}}">
+    <button shape="capsule" slot="action" onTap="onButtonTap" type="primary">Use Now</button>
+    <view slot="date">Validity period：2020.02.14-2020.02.29</view>
+    <view slot="detail" class="coupon_rule">
+      <text>1、Detailed rule description detailed rule description detailed rule description detailed rule description detailed rule description detailed rule description detailed rule description；</text>
+      <text>2、Detailed rule description detailed rule description detailed rule description detailed rule description detailed rule description；</text>
+    </view>
+  </coupon>
+</view>
+<view>
+  <coupon title="Coupon Title8" 
+    subtitle="Coupon Sub Title" 
+    onCouponClick="onCouponClick" 
+    thumb="{{thumb}}">
+    <am-checkbox slot="action" onTap="onButtonTap" />
+  </coupon>
+</view>
+<view>
+  <coupon title="Coupon Title9" 
+    subtitle="Coupon Sub Title" 
+    onCouponClick="onCouponClick" 
+    thumb="{{thumb}}">
+    <stepper
+      slot="action"
+      step="{{1}}"
+      showNumber
+      min="{{2}}"
+    />
+  </coupon>
+</view>
+<view style="margin-top: 50px;"></view>

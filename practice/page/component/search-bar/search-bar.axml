@@ -1,0 +1,19 @@
+<view>
+  <search-bar
+    value="{{value}}"
+    focus="{{true}}"
+    disabled="{{false}}"
+    maxLength="{{20}}"
+    showVoice="{{showVoice}}"
+    placeholder="search"
+    onInput="handleInput"
+    onClear="handleClear"
+    onFocus="handleFocus"
+    onBlur="handleBlur"
+    onCancel="handleCancel"
+    onSubmit="handleSubmit"
+    showCancelButton="{{true}}" />
+</view>
+<view style="padding: 24rpx">
+  <checkbox onChange='onChange' id="showVoice"/><label for="showVoice">Whether to display the Voice icon</label>
+</view>

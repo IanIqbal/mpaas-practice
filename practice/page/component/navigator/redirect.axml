@@ -1,0 +1,5 @@
+<view class="page">
+  <view class="page-description">
+    This is the current page，Click the upper left corner to return to the upper menu
+  </view>
+</view>

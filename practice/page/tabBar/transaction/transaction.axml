@@ -1,0 +1,7 @@
+<view id="main">
+    <block a:for="{{ transactions }}" a:for-item="transaction">
+      <transaction-card transaction={{transaction}}></transaction-card>
+    </block>
+
+   
+</view>

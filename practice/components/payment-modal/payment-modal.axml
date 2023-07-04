@@ -1,0 +1,53 @@
+<view id="main-container">
+  <view id="header-section">
+    <text>Pilih Pembayaran</text>
+  </view>
+  <view>
+    <form onSubmit="submitHandler" >
+      <radio-group  name="payMethod">
+        <label a:for={{paymentMethods}} class="radio-container" key="label-{{index}}">
+          <view id="radio-list">
+
+            <view>
+              <radio value="{{item.value}}" checked="{{item.checked}}" disabled="{{item.disabled}}" />
+              <text>
+                {{item.label}}
+              </text>
+            </view>
+
+            <text a:if="{{ item.value == 'saldo' }}" >{{formattedSaldo}}</text>
+            <text id="unavailable-text" a:else>Unavailable</text>
+
+          </view>
+        </label>
+      </radio-group>
+      <view id="info-saldo">
+        <view>
+          <text>Saldo Anda</text>
+          <text>{{formattedSaldo}}</text>
+        </view>
+        <view>
+          <text>Total Harga</text>
+          <text>{{formattedTotalPrice}}</text>
+        </view>
+        <view>
+          <text>Sisa Saldo</text>
+          <text>{{formattedSisaSaldo}}</text>
+          <text a:if="{{ insufficient }}" id="insufficient-text" >Saldo tidak cukup</text>
+        </view>
+      </view>
+        <button className="pay-button" disabled={{insufficient? true : false}} size="default" type="text" form-type="{{insufficient? '' :'submit'}}" >Bayar</button>
+    </form>
+  </view>
+
+  <modal
+  title="Confirm Payment"
+  type="focus"
+  visible="{{confirmVisibility}}"
+  onClose="handleConfirmModal"
+  primaryButtonText="Confirm"
+  secondaryButtonText="Cancel"
+  onPrimaryButtonTap="payHandler"
+  onSecondaryButtonTap="handleConfirmModal"
+/>
+</view>

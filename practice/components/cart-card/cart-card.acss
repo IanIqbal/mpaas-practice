@@ -1,0 +1,65 @@
+#transaction-card{
+  justify-content: center;
+  padding: 20px 20px;
+  border-bottom: 1px solid rgba(95, 74, 74, 0.39);
+}
+
+#info-section{
+  display: flex;
+  margin-bottom: 10px;
+}
+
+#info-section image{
+  width: 100px;
+  height: 100px;
+  border-radius: 12px;
+}
+
+#text-section{
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+#text-brand{
+  font-size: 0.8em;
+  color: rgba(95, 74, 74, 0.753);
+}
+
+#price-section{
+  margin-top: 10px;
+
+}
+#original-price{
+  font-size: 0.9em;
+  text-decoration: line-through;
+}
+
+#discounted-price{
+  color: #E57C23;
+  margin-left: 5px;
+}
+
+#piece-section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#button-section{
+  margin-left: 10px;
+  border: solid 1px rgba(173, 161, 156, 0.459);
+  padding: 0 2px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+}
+
+#button-section text{
+  margin: 0 2px;
+}
+
+#button-section button{
+  padding: 0px 4px;
+  color: #E57C23;
+}

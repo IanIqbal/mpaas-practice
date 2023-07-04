@@ -1,0 +1,24 @@
+<view class="page">
+  <view class="page-description">animation API</view>
+  <view class="page-section">
+    <view class="page-section-title">my.createAnimation</view>
+    <view class="page-section-demo">
+      <view class="animation-element" animation="{{animation}}"></view>
+    </view>
+    <view class="page-section-btns">
+      <view type="primary" onTap="rotate">rotate</view>
+      <view type="primary" onTap="scale"> zoom</view>
+      <view type="primary" onTap="translate">move</view>
+    </view>
+    <view class="page-section-btns">
+      <view type="primary" onTap="skew">tilt</view>
+      <view type="primary" onTap="rotateAndScale">Rotate and scale</view>
+      <view type="primary" onTap="rotateThenScale">Scale after rotation</view>
+    </view>
+    <view class="page-section-btns">
+      <view type="primary" onTap="all">Show all at the same time</view>
+      <view type="primary" onTap="allInQueue">Show all in sequence</view>
+      <view type="primary" onTap="reset">reduction</view>
+    </view>
+  </view>
+</view>
