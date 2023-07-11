@@ -49,31 +49,36 @@ App({
     return new Promise((resolve, reject) => {
 
       my.httpRequest({
-        url: "https://f778-103-144-175-27.ngrok-free.app/users",
+        url:  this.globalData.address + "/users",
         method: "GET",
         headers: {
           "Content-Type": "application/json",
+          'ngrok-skip-browser-warning': 'true',
+
           "access_token": my.getStorageSync({
             key: "accessToken"
           }).data
         },
-        dataType: "JSON",
+        dataType: "json",
         timeout: 30000,
         success: (result) => {
-          let {
-            saldo,
-            rekening,
-            username,
-            isAgree
-          } = result.data
+            let {
+              saldo,
+              rekening,
+              username,
+              isAgree
+            } = result.data
+            
+            console.log("<<<<<<success");
           
-          console.log("<<<<<<success");
-          resolve({
-            saldo,
-            rekening,
-            username,
-            isAgree
-          })
+            resolve({
+              saldo,
+              rekening,
+              username,
+              isAgree
+            })
+            
+        
         },
         error: (error) => {
           console.log(error, "<<<<<<");
@@ -102,17 +107,19 @@ App({
         console.log("expired");
 
         my.httpRequest({
-          url: "https://f778-103-144-175-27.ngrok-free.app/users/refreshAccess",
+          url:  this.globalData.address + "/users/refreshAccess",
           method:"GET",
           headers:{
             refresh_token: my.getStorageSync({key:"refreshToken"}).data,
-            "content-type":"application/json"
+            "content-type":"application/json",
+          'ngrok-skip-browser-warning': 'true',
+
           },
           dataType:"JSON",
           timeout: 30000,
           success: (result)=>{
             //IF THE ACCESSTOKEN SUCCESSFULLY RENEWED, THIS CODE RUN
-            console.log(" refresh token success");
+            console.log(" refresh token success");            
             my.setStorageSync({"key":"accessToken", data:result.data.accessToken})
             resolve("refreshed")
           },
@@ -147,6 +154,6 @@ App({
     cart: [],
     totalSelected: 0,
     username: 0,
-    address: "https://f778-103-144-175-27.ngrok-free.app"
+    address: "https://bddc-103-144-175-27.ngrok-free.app"
   },
 });

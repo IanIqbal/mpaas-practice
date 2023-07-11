@@ -12,7 +12,7 @@ Page({
     let {username, password} = e.detail.value
 
     my.httpRequest({
-      url: 'https://f778-103-144-175-27.ngrok-free.app/users/login',
+      url:  app.globalData.address + '/users/login',
       headers: {},
       method: 'post',
       data: {

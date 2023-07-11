@@ -75,7 +75,7 @@ Page({
           content: "Loading"
         });
         my.request({
-          url: `http://localhost:3001/companies/${symbol}`,
+          url:  app.globalData.address + `/companies/${symbol}`,
           method: "get",
           headers: {
             access_token: my.getStorageSync({

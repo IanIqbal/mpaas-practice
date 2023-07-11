@@ -76,7 +76,7 @@ Component({
       .then((result)=>{
         
         my.httpRequest({
-          url: 'http://localhost:3001/transactions',
+          url:  app.globalData.address +  '/transactions',
           headers: {access_token: my.getStorageSync({key:"accessToken"}).data, 'content-type': 'application/json' },
           method: 'post',
           data: {

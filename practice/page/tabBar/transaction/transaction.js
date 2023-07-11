@@ -15,7 +15,7 @@ Page({
               content: 'Loading'
             });
             my.request({
-              url:"http://localhost:3001/transactions",
+              url: app.globalData.address + "/transactions",
               method:"get",
               headers:{
                 access_token:my.getStorageSync({"key":"accessToken"}).data,

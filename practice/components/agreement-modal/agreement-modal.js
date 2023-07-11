@@ -26,7 +26,7 @@ Component({
         .then((result)=>{
           
         my.request({
-          url: 'http://localhost:3001/users/status',
+          url:  app.globalData.address + '/users/status',
           dataType: "json",
           method: "patch",
           headers: {
