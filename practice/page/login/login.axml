@@ -1,14 +1,18 @@
 <view class="container">
   <notice className="notice" a:if="{{ error.status }}" type="error">{{error.message}}</notice>
+
   <view id="image-section">
     <image src="/image/logo-bni.png" />
   </view>
+
   <view id="login-form">
+
     <view class="title-form">
       <text>
         Login
       </text>
     </view>
+
     <view>
 
 
@@ -18,6 +22,7 @@
         <button inline form-type="submit">Submit</button>
       </form>
     </view>
+
   </view>
   <popup position="bottom" animation={{true}} height={{600}} visible={{agreementModal}}>
     <scroll-view
@@ -32,13 +37,17 @@
   </popup>
 
   <view id="misc-section">
+
     <view class="misc-list">
       <icon type="BankcardOutline" />
       <text>Top Up E-Wallet</text>
     </view>
+
     <view class="misc-list">
       <icon type="ScanningOutline" />
       <text>Pembayaran QR</text>
     </view>
+
   </view>
+  
 </view>

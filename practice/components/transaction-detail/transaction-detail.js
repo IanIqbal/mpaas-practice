@@ -6,10 +6,12 @@ Component({
   },
   didMount() {
     let updatedData = this.props.transaction.TransactionItems.map(el =>{
-      let formattedPrice = "Rp. " + new Intl.NumberFormat().format(el.price) 
-      let formattedTotalPrice = "Rp. " + new Intl.NumberFormat().format(el.totalPrice)
-      let output = {...el, formattedPrice, formattedTotalPrice}
-      return output
+
+      return {...el, 
+      formattedPrice: "Rp. " + new Intl.NumberFormat().format(el.price) , 
+      formattedTotalPrice: "Rp. " + new Intl.NumberFormat().format(el.totalPrice),
+      }
+      
     })
 
     this.setData({transaction: {...this.props.transaction, TransactionItems: updatedData}})

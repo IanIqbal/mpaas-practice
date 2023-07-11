@@ -10,7 +10,6 @@ Page({
 
     app.refreshAccessToken()
     .then((result) =>{
-      console.log(result);
 
             my.showLoading({
               content: 'Loading'
@@ -25,11 +24,9 @@ Page({
               dataType:"json",
               success: (result)=>{
                 this.setData({transactions:result.data})
-                console.log(result);
               },
               fail: (error)=>{
-                
-                console.log(error, "<<<<<<Dari fetch");
+                console.log(error);
               },
               complete: ()=>{
                 my.hideLoading();

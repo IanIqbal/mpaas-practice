@@ -1,20 +1,24 @@
 <view>
-  <!-- <text id="sandbox-header" >Test</text> -->
+
   <view id="canvas-container" >
     <canvas
     style="width:{{screenWidth}}; height:{{screenHeight}}" id="canvas" class="canvas" onTouchStart="log" onTouchMove="log"
     onTouchEnd="log"/>  
- 
   </view>
+
   <view id="quotes-container">
-    
     <block a:for="{{ quotes.quotes }}" a:for-item="quote" >
+
       <view class="quote-list"  onTap="toDetail" data-id={{quote.id}}  key={{quote.id}}>
         <text>" {{quote.quote}} "</text>
+
         <view id="author-name">
           <text>{{quote.author}}</text>
         </view>
+
       </view>
+
     </block>
   </view>
+  
 </view>

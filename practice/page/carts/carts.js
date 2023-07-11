@@ -10,7 +10,6 @@ Page({
     this.setData({
       cart: app.globalData.cart
     })
-    console.log(this.data.cart);
   },
 
   onShow() {
@@ -24,7 +23,6 @@ Page({
     this.setData({formattedTotalPrice: "Rp. " + new Intl.NumberFormat().format(this.data.totalPrice)   })
   },
   modalHandle(){
-    console.log("test");
     this.setData({modalStatus: !this.data.modalStatus})
   }
 });

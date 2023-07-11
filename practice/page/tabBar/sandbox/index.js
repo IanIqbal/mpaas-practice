@@ -7,15 +7,17 @@ Page({
     limit:30
   },
   onLoad() {
+
     let {
       screenHeight,
       screenWidth
     } = my.getSystemInfoSync()
-    console.log(my.getSystemInfoSync());
+
     this.setData({
       screenHeight,
       screenWidth
     })
+
     this.getQuotes()
   },
   onShow() {
@@ -23,6 +25,7 @@ Page({
     let token = my.getStorageSync({
       key: "accessToken"
     })
+
     if (!token.data) {
       my.navigateTo({
         url: "/page/login/login"
@@ -50,17 +53,15 @@ Page({
           method: "get",
           dataType: "json",
           success: (res) => {
-            console.log("fetch success");
             this.setData({
               quotes: res.data
             })
           },
-          fail: function (res) {
-            console.log(res);
+          fail:  (err) => {
+            console.log(err);
           },
           complete: () => {
             my.hideLoading();
-            console.log(this.data.quotes);
 
           }
         })
@@ -73,21 +74,12 @@ Page({
 
   },
   toDetail(e) {
-    console.log(e.currentTarget);
     let {
       id
     } = e.currentTarget.dataset
+
     my.navigateTo({
       url: "/page/detail/detail?id=" + id
-    })
-  },
-  onCanvasReady() {
-    console.log("test");
-    my.createSelectorQuery().select('#canvas').node().exec(res => {
-      const canvas = res[0].node
-      const gl = canvas.getContext('webgl')
-      gl.clearColor(1, 1, 0, 1)
-      gl.clear(gl.COLOR_BUFFER_BIT)
     })
   },
   onReady() {
@@ -131,7 +123,6 @@ Page({
       this.point.dy = -this.point.dy;
     }
   },
-  drawBall() {},
   log(e) {
     if (e.touches && e.touches[0]) {
       console.log(e.type, e.touches[0].x, e.touches[0].y);

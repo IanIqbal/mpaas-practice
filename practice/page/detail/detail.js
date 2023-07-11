@@ -19,7 +19,6 @@ Page({
 
   },
   onPullDownRefresh() {
-    console.log("refresh");
     this.getPictures()
   },
   getDetail(id) {
@@ -45,7 +44,6 @@ Page({
           console.log(err);
         },
         complete: () => {
-          console.log(this.data.quote);
           my.hideLoading()
   
         }
@@ -74,7 +72,6 @@ Page({
           Authorization: API_KEY
         },
         method: 'GET',
-        data: {},
         timeout: 30000,
         dataType: "JSON",
         success: (result) => {

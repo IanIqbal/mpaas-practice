@@ -9,10 +9,11 @@
     "page/login/login",
     "page/tabBar/account/index",
     "page/products/products",
-    "page/detail-product/detail-product",
     "page/carts/carts",
     "page/tabBar/transaction/transaction",
-    "page/webview-menu/webview-menu"
+    "page/webview-menu/webview-menu",
+    "page/trading-page/trading-page",
+    "page/trading-detail/trading-detail"
   ],
   "subPackages": [
     {
@@ -222,8 +223,7 @@
     "pullRefresh": true,
     "allowsBounceVertical": "YES",
     "titleBarColor": "#fff",
-    "enableComponentOverlayer":"YES"
-
+    "enableComponentOverlayer": "YES"
   },
   "tabBar": {
     "textColor": "#404040",

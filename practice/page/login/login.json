@@ -6,7 +6,6 @@
     "agreement-modal": "/components/agreement-modal/agreement-modal",
     "toast": "antd-mini/es/Toast/index",
     "notice": "antd-mini/es/NoticeBar/index",
-    "notification-toast":"/components/notification-toast/notification-toast",
     "icon": "antd-mini/es/Icon/index"
 
   }

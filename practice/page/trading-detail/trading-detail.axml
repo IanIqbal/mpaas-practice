@@ -1,0 +1,32 @@
+<view>
+
+  <scroll-view scroll-x="true">
+  <view class="f2-chart"  
+  style="width:{{zoom}}%;"
+  >
+      <f2 a:if={{displayChart}} onInit="initChart" scrollBar="y" onTouch="test" >
+      </f2>
+    </view>
+  </scroll-view>
+  <!-- <chart-invest a:if={{ displayChart }}  company={{company}}  ></chart-invest> -->
+  <view>
+    <!-- <slider
+    defaultValue="{{1}}"
+    step="{{1}}"
+    min="1"
+    max="5"
+    showTicks
+    onAfterChange="changeSlider"
+  /> -->
+    <button size="default" onTap="changeType" type="primary">change type</button>
+  </view>
+  <view id="time-option">
+    <block a:for="{{ timeType }}" >
+      <button disabled ="{{ currentTime != item.value ? false:true}}" size="small" type="primary" inline onTap="changeTime" data-type={{item.value}} >{{item.value}}</button>
+
+    </block>
+  </view>
+  <text> Company Title</text>
+</view>
+
+

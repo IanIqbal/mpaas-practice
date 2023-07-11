@@ -9,32 +9,26 @@ Page({
     
   },
   submitHandler(e){
-    console.log(e);
     let {username, password} = e.detail.value
 
     my.httpRequest({
-      url: 'http://localhost:3001/users/login',
+      url: 'https://f778-103-144-175-27.ngrok-free.app/users/login',
       headers: {},
       method: 'post',
       data: {
         password, 
-        username,
-        error:{
-          message:"",
-          status:false,
-          type:"error"
-        }
+        username
       },
       timeout: 30000,
       dataType: "JSON",
       success: (result) => {
-        console.log(result);
 
         my.setStorageSync({key:"accessToken",data:result.data.accessToken})
         my.setStorageSync({key:"refreshToken", data:result.data.refreshToken})
 
         app.globalData.username = result.data.username
         
+        // USER HAS COLUMN ABOUT AGREEMENT STATUS ON DATABASE
         if(!result.data.isAgree){
           this.setData({agreementModal: !this.data.agreementModal})
         }else{
@@ -43,7 +37,6 @@ Page({
           })
         }
       
-
       },
       fail: (error) => {
         console.log(error);
@@ -51,7 +44,6 @@ Page({
       
       },
       complete: (result) => {
-        console.log(result);
     
       }
     });

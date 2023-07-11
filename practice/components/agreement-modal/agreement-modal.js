@@ -15,9 +15,9 @@ Component({
   didUnmount() {},
   methods: {
     checkHandler(e){
-      console.log(e);
       this.setData({buttonStatus: e.detail.value})
     },
+    
     agreementHandler(){
 
       if(this.data.buttonStatus){
@@ -34,7 +34,6 @@ Component({
           },
           timeout: 30000,
           success: (result) => {
-            console.log(result.data);
             my.switchTab({
               url: '/page/tabBar/home/home'
             });

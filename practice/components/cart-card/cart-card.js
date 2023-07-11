@@ -7,7 +7,6 @@ Component({
   },
   didMount() {},
   didUpdate(){
-console.log("updated");
   },
   didUnmount() {},
   methods: {
@@ -19,6 +18,7 @@ console.log("updated");
 
       newCart.splice(index,1)
 
+      // this.$page IS THE SYNTAX FOR ACCESSING/CHANGING ANY STATE OR FUNCTION ON PARENT PAGE FROM CHILDREN COMPONENT
       this.$page.setData({
         cart: newCart
       })
@@ -32,11 +32,9 @@ console.log("updated");
       my.setStorageSync({key:"cart", data: newCart})
       my.setStorageSync({key:"totalSelected", data: app.globalData.totalSelected })
     },
-    test() {
-      console.log("test from test");
-    },
+
     changeStock(e) {
-      console.log("test");
+
       let {operation} = e.currentTarget.dataset
       let {id} = e.currentTarget.dataset
       let targetIndex = this.$page.data.cart.findIndex(el => el.id == id)
@@ -50,23 +48,20 @@ console.log("updated");
         app.globalData.totalSelected--
       }
 
-      this.$page.setData({cart: newCart })
+      this.$page.setData({
+        cart: newCart ,
+        totalPrice: operation? this.$page.data.totalPrice + newCart[targetIndex].finalPrice : this.$page.data.totalPrice - newCart[targetIndex].finalPrice,
+      })
+      
+      this.$page.setData({
+        formattedTotalPrice: "Rp. " + new Intl.NumberFormat().format(this.$page.data.totalPrice)
+      })
+      
       app.globalData.cart = newCart
-      // app.globalData.cart.forEach(el => {
-        
-      //   if (el.id == id) {
-      //     el.stockSelected = operation? el.stockSelected+1 : el.stockSelected-1
-      //   }
-        
-      // })
-
-      this.$page.setData({totalPrice: operation? this.$page.data.totalPrice + newCart[targetIndex].finalPrice : this.$page.data.totalPrice - newCart[targetIndex].finalPrice })
-      this.$page.setData({formattedTotalPrice: "Rp. " + new Intl.NumberFormat().format(this.$page.data.totalPrice)   })
-
+   
       my.setStorageSync({key:"cart", data: newCart})
       my.setStorageSync({key:"totalSelected", data: app.globalData.totalSelected })
 
-      console.log(app.globalData.cart);
     }
   },
 });

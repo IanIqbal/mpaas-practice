@@ -12,9 +12,7 @@ Component({
     
     addToCart() {
 
-      let {
-        id
-      } = this.props.detailProduct
+      let {id} = this.props.detailProduct
 
       let isExist = false
       let total = 0
@@ -38,10 +36,7 @@ Component({
       app.globalData.totalSelected = total
 
       this.$page.setData({
-        totalSelected: app.globalData.totalSelected
-      })
-
-      this.$page.setData({
+        totalSelected: app.globalData.totalSelected,
         cart: app.globalData.cart
       })
 
@@ -49,12 +44,15 @@ Component({
         key: "cart",
         data: app.globalData.cart
       })
+
       my.setStorageSync({
         key: "totalSelected",
         data: app.globalData.totalSelected
       })
+
       this.toastHandler()
     },
+    
     toastHandler() {
       this.setData({
         toastStatus: !this.data.toastStatus

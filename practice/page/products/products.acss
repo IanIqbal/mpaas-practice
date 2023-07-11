@@ -19,10 +19,6 @@
   margin-left: 20px;
   width: 20px;
   height: 20px;
-  /* background-color: teal; */
-  /* border: grey solid 2px;
-  border-radius: 12px;
-  padding: 2px; */
 }
 .notification{
   font-size: 0.7em;
@@ -46,14 +42,11 @@
 
 #cart-float{
   position: fixed;
-  /* top: 100px;
-  left: 100px; */
 }
 
 #cart-float image{
   width: 40px;
   height: 40px;
-  /* background-color: teal; */
   border: grey solid 2px;
   border-radius: 12px;
   padding: 2px;

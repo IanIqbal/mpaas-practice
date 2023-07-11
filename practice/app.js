@@ -33,11 +33,11 @@ App({
 
 
 
-    // let token = my.getStorageSync({key:"accessToken"})
-    // if(!token.data){
-    //   console.log("xxxxxxx");
-    //   my.navigateTo({url:"/page/login/login"})
-    // }
+    let token = my.getStorageSync({key:"accessToken"})
+    if(!token.data){
+      console.log("xxxxxxx");
+      my.navigateTo({url:"/page/login/login"})
+    }
 
   },
   onHide() {
@@ -45,30 +45,29 @@ App({
   },
 
   getUserData() {
-    console.log("dari app");
 
     return new Promise((resolve, reject) => {
 
-      my.request({
-        url: "http://localhost:3001/users",
-        method: "get",
+      my.httpRequest({
+        url: "https://f778-103-144-175-27.ngrok-free.app/users",
+        method: "GET",
         headers: {
-          "content-type": "application/json",
+          "Content-Type": "application/json",
           "access_token": my.getStorageSync({
             key: "accessToken"
           }).data
         },
-        dataType: "json",
+        dataType: "JSON",
+        timeout: 30000,
         success: (result) => {
-          // console.log(result);
           let {
             saldo,
             rekening,
             username,
             isAgree
           } = result.data
-       
-
+          
+          console.log("<<<<<<success");
           resolve({
             saldo,
             rekening,
@@ -77,7 +76,7 @@ App({
           })
         },
         error: (error) => {
-          console.log(error);
+          console.log(error, "<<<<<<");
           reject({
             error
           })
@@ -89,32 +88,36 @@ App({
     })
 
   },
+
+  //THIS FUNCTION IS CALLED EVERYTIME THIS PROGRAM WANT TO SEND REQUEST TO ANOTHER API FROM PAGES AND COMPONENTS
   refreshAccessToken(){
     return new Promise((resolve,reject) =>{
 
+      //IN HERE THE ACCESSTOKEN DECODED BY A PACKAGE CALLED 'JWT-DECODE', TO CHECK THE EXPIRY TIME
       let decoded = jwtDecode(my.getStorageSync({key:"accessToken"}).data)
     
 
       if(decoded.exp < Date.now()/1000){
+        //IF THE ACCESSTOKEN EXPIRED, THIS CODE EXECUTE
         console.log("expired");
 
-        my.request({
-          url:"http://localhost:3001/users/refreshAccess",
-          method:"get",
+        my.httpRequest({
+          url: "https://f778-103-144-175-27.ngrok-free.app/users/refreshAccess",
+          method:"GET",
           headers:{
             refresh_token: my.getStorageSync({key:"refreshToken"}).data,
             "content-type":"application/json"
           },
-          dataType:"json",
+          dataType:"JSON",
+          timeout: 30000,
           success: (result)=>{
-            console.log(" refresh success");
-            console.log(result);
+            //IF THE ACCESSTOKEN SUCCESSFULLY RENEWED, THIS CODE RUN
+            console.log(" refresh token success");
             my.setStorageSync({"key":"accessToken", data:result.data.accessToken})
             resolve("refreshed")
           },
           fail: (error) =>{
-            
-            console.log(error, "<<<<< dari promise");
+            //IF THE ACCESSTOKEN FAILED TO BE RENEWED (BECAUSE OF THE REFRESHTOKEN HAS BEEN EXPIRED), THIS CODE RUN
             my.showToast({
               content: error.data.message
             });
@@ -126,8 +129,8 @@ App({
         })
 
       }else{
-        // expired = false
-        console.log("fresh");
+        //IF THE ACCESSTOKEN IS NOT EXPIRED YET, THIS CODE RUN, AND RETURN ONLY STRING 
+        console.log("refresh token still valid");
         resolve("fresh")
       }
     })
@@ -144,5 +147,6 @@ App({
     cart: [],
     totalSelected: 0,
     username: 0,
+    address: "https://f778-103-144-175-27.ngrok-free.app"
   },
 });

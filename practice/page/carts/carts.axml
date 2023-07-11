@@ -1,4 +1,5 @@
 <view>
+
   <view id="transaction-section">
     <block a:for="{{ cart }}">
       <cart-card item={{item}}></cart-card>
@@ -6,6 +7,7 @@
   </view>
 
   <view id="total-price">
+
     <view id="total-price-left">
       <text>Total Harga</text>
       <text>{{formattedTotalPrice}}</text>
@@ -15,6 +17,7 @@
       <button onTap="modalHandle" size="default" type="text" inline>Pembayaran
       </button>
     </view>
+    
   </view>
 
   <modal visible={{modalStatus}} onClose="modalHandle">

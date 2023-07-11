@@ -40,9 +40,11 @@
 
 Please read these Terms carefully before using the BNI Mobile Banking App. If you have any questions or concerns, please contact BNI's customer support.
   </text>
+
   <form onSubmit="agreementHandler" id="form" >
     <checkbox  value={{isAgree.value}} checked={{isAgree.checked}} onChange="checkHandler" />
     <text>{{isAgree.name}}</text>
     <button size="default" disabled={{buttonStatus? false : true}} type="primary"  form-type="submit">Continue</button>
   </form>
+  
 </view>

@@ -1,0 +1,4 @@
+.f2-chart {
+  height: 1000rpx;
+  /* width: 300%; */
+}

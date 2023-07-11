@@ -28,7 +28,6 @@
   position: relative;
   z-index: 3;
 
-  /* From https://css.glass */
 background: rgba(0, 180, 216, 0.54);
 border-radius: 16px;
 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);

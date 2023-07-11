@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "@ant-design/icons": "^5.1.4",
+    "@antv/my-f2": "^2.1.7",
     "antd": "^5.6.1",
     "antd-mini": "^1.9.1",
     "jsrsasign": "^10.5.20",

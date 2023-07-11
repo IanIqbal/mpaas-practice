@@ -6,8 +6,8 @@
   "usingComponents": {
     "icon": "antd-mini/es/Icon/index",
     "button": "antd-mini/es/Button/index",
-    "product-card": "/page/product-card/product-card",
+    "product-card": "/components/product-card/product-card",
     "popup": "antd-mini/es/Popup/index",
-    "detail-product": "/page/detail-product/detail-product"
+    "detail-product": "/components/detail-product/detail-product"
   }
 }

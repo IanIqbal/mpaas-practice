@@ -1,0 +1,10 @@
+{   
+  "pullRefresh": false,
+  "usingComponents": {
+    "f2": "@antv/my-f2",
+    "button": "antd-mini/es/Button/index",
+    "slider": "antd-mini/es/Slider/index"
+
+  },
+  "allowsBounceVertical":"NO"
+}

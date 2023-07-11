@@ -10,17 +10,15 @@ Component({
     transaction:{}
 },
   didMount() {
-    let year = new Date(this.props.transaction.createdAt).getFullYear()
-    let month = new Date(this.props.transaction.createdAt).getMonth()
-    let date = new Date(this.props.transaction.createdAt).getDate()
+  
+    this.setData({
+      formattedDate:  new Date(this.props.transaction.createdAt).toLocaleString("id", {day:"numeric",month:"long", year:"numeric"}) ,
+      formattedPrice: "Rp. " + new Intl.NumberFormat().format(this.props.transaction.totalPrice),
+      formattedStatus: this.props.transaction.status.toUpperCase() 
+   })
 
-    this.setData({formattedDate:  new Date(this.props.transaction.createdAt).toLocaleString("id", {day:"numeric",month:"long", year:"numeric"})  })
-    this.setData({formattedPrice: "Rp. " + new Intl.NumberFormat().format(this.props.transaction.totalPrice)})
-    this.setData({formattedStatus: this.props.transaction.status.toUpperCase() })
   },
-  didUpdate() {
-   
-  },
+  didUpdate() {},
   didUnmount() {},
   methods: {
 

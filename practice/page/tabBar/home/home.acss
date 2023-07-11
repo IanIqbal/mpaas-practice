@@ -84,7 +84,6 @@
 }
 
 #menu-card {
-  /* background-color: tomato; */
   width: 75px;
   justify-content: center;
   font-size: 0.8em;
@@ -93,7 +92,6 @@
 
 #icon-menu {
 
-  /* padding: 5px; */
   display: flex;
   justify-content: center;
 }

@@ -14,10 +14,7 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": "myqsl",
-    "database": "database_production",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "url": "postgresql://postgres:Donvitocorleone13@db.oqlvjxkqnnckhbhvixny.supabase.co:5432/postgres",
+    "dialect": "postgres"
   }
 }

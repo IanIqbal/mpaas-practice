@@ -27,8 +27,7 @@ Page({
       },
       {
         name: "Investasi",
-        logo: "HistogramOutline",
-        url:"https://bni.co.id/en-us/corporate/international/foreign-direct-investment"
+        logo: "HistogramOutline"
       },
       {
         name: "Life Goals",
@@ -79,30 +78,40 @@ Page({
   },
   onLoad() {},
   toMiniApp(e) {
-    let {
-      page
-    } = e.currentTarget.dataset
-    console.log(page);
+    let {page} = e.currentTarget.dataset
 
-    if (page == "Pembelian") {
-      my.navigateTo({
-        url: "/page/products/products"
-      })
-    } else {
 
-      my.navigateTo({
-        url:"/page/webview-menu/webview-menu?page=" + page 
-      })
+    switch (page) {
+      case "Pembelian":
+        
+        my.navigateTo({
+          url: "/page/products/products"
+        })
+        break;
+      
+      case "Investasi":
+        my.navigateTo({
+          url: "/page/trading-page/trading-page"
+        })
+        break;
+        
+      default:
+        my.navigateTo({
+          url:"/page/webview-menu/webview-menu?page=" + page 
+        })
+        break;
     }
+  
   },
 
   onShow() {
     this.getUserData()
 
-    let token = my.getStorageSync({
-      key: "accessToken"
-    })
+    let token = my.getStorageSync({ key: "accessToken"}
+    )
+
     if (!token.data) {
+
       my.navigateTo({
         url: "/page/login/login"
       })
@@ -118,28 +127,22 @@ Page({
     )
     .then((data) => {
 
-      // console.log(data);
       if(!data.isAgree){
+        //THIS IS TO PREVENT THE USER FOR ENTERING HOME PAGE WITHOUT AGREED ON THE TERMS OF CONDITIONS(TOC) BY REFRESHING ON TOC PAGE
         my.navigateTo({url:"/page/login/login"})
       }else{
 
-        
       this.setData({
-          username: data.username.toUpperCase()
+          username: data.username.toUpperCase(),
+          saldo: data.saldo,
+          rekening: data.rekening,
+          formattedSaldo: "Rp. " + new Intl.NumberFormat().format(data.saldo)
+
         })
-      this.setData({
-        saldo: data.saldo
-      })
-      this.setData({
-        rekening: data.rekening
-      })
-      this.setData({
-        formattedSaldo: "Rp. " + new Intl.NumberFormat().format(data.saldo)
-      })
+  
     }
     })
     .catch((error)=>{
-      console.log(error);
       app.logOut()
     })
    

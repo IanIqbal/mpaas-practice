@@ -1,4 +1,5 @@
 <view>
+
   <view id="searchbar-section">
     <input onInput="searchHandler" placeholder="Search product">
       <icon type="SearchOutline" />
@@ -12,14 +13,15 @@
 
 
     <image onTap="toCart" mode="scaleToFill" src="/image/trolley-icon.png" />
-
   </view>
 
   <view id="product-section">
     <block a:for="{{  products }}" a:for-item="product">
+
       <view onTap="handlePopup" data-product={{product}}>
         <product-card product={{product}}></product-card>
       </view>
+
     </block>
   </view>
   
@@ -30,5 +32,4 @@
   </popup>
 
 
-  <!--<view id="cart-float" style="top:{{cartLocation.x}}px; left:{{cartLocation.y}}" onTouchMove="cartHandler" ><image mode="scaleToFill" src="/image/trolley-icon.png" /></view> -->
 </view>

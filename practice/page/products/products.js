@@ -17,24 +17,25 @@ Page({
   handlePopup(e) {
     if (e) {
 
-      let {
-        product
-      } = e.currentTarget.dataset
+      let {product} = e.currentTarget.dataset
 
       this.setData({
         detailProduct: product
       })
-    }
 
+    }
 
     this.setData({
       showPopup: !this.data.showPopup
     })
+
   },
+
   onLoad() {
     this.getProducts()
    
   },
+
   onShow(){
     
     if(my.getStorageSync({key:"cart"}).data && my.getStorageSync({key:"totalSelected"}).data){
@@ -42,8 +43,7 @@ Page({
       app.globalData.totalSelected = my.getStorageSync({key:"totalSelected"}).data
     }
     
-    this.setData({cart: app.globalData.cart})
-    this.setData({totalSelected: app.globalData.totalSelected})
+    this.setData({cart: app.globalData.cart, totalSelected: app.globalData.totalSelected})
   },
 
   onReachBottom(){
@@ -52,7 +52,6 @@ Page({
       this.setData({limit:this.data.limit+10})
 
       if(!this.data.isSearch){
-
         this.getProducts()
       }
     }
@@ -67,9 +66,10 @@ Page({
       this.setData({isSearch:false})
     }
     let searchQuery = search? `/search?q=${search}` : `?limit=${this.data.limit}`
-    console.log(searchQuery);
+
     app.refreshAccessToken()
-    .then((result)=>{
+    
+    .then((response)=>{
       my.request({
         url: `https://dummyjson.com/products${searchQuery}`,
         headers: {},
@@ -90,40 +90,40 @@ Page({
             result.data.products[index] = newOutput
   
           })
-          console.log(result);
+
           this.setData({
             products: result.data.products
           })
+
         },
-        fail: () => {
-  
+        fail: (error) => {
+          console.log(error);
         },
         complete: () => {
-          console.log(this.data.products);
           my.hideLoading()
         }
       });
     })
     .catch((error)=>{
-      console.log(error);
       my.hideLoading()
       app.logOut()
     })
    
   },
+
   converter(value) {
 
     return "Rp. " + new Intl.NumberFormat().format(value)
   },
+
   toCart(){
-    console.log("test");
     my.navigateTo({
       url: '/page/carts/carts'
     });
   },
+
   searchHandler(e){
     setTimeout(()=>{
-      console.log(e.detail.value);
       this.setData({isSearch:true})
       this.getProducts(e.detail.value)
     }, 3000)

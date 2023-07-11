@@ -1,0 +1,15 @@
+<view>
+  
+  <list header="Companies" >
+    <view  a:for={{companies}} >
+      <list-item 
+      brief="{{item.name}}"
+      arrow="right"
+      onTap="toTradingDetail"
+      data-symbol={{item.symbol}}
+      >
+      {{item.symbol}}
+    </list-item>
+  </view>
+</list>
+</view>

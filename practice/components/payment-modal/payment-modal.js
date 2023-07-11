@@ -37,37 +37,39 @@ Component({
   props: {
     totalPrice: 0
   },
+
   didMount() {
    this.getUserData()
   },
+
   didUpdate(prevProps,prevData) {
 
     this.setData({
-      formattedTotalPrice: "Rp. " + new Intl.NumberFormat().format(this.props.totalPrice)
-    })
-    this.setData({
-      sisaSaldo: this.data.saldo - this.props.totalPrice
-    })
-    this.setData({
+      formattedTotalPrice: "Rp. " + new Intl.NumberFormat().format(this.props.totalPrice),
+      sisaSaldo: this.data.saldo - this.props.totalPrice,
       formattedSisaSaldo: "Rp. " + new Intl.NumberFormat().format(this.data.saldo - this.props.totalPrice)
     })
+  
     this.setData({insufficient:this.data.sisaSaldo > 0? false : true })
 
 
    
   },
+
   didUnmount() {},
+  
   methods: {
     submitHandler(e) {
-      console.log("disabled");
      this.setData({payMethod: e.detail.value.payMethod})
      this.handleConfirmModal()
     },
+
     handleConfirmModal() {
       this.setData({
         confirmVisibility: !this.data.confirmVisibility
       })
     },
+
     payHandler(e){
 
       app.refreshAccessToken()
@@ -106,29 +108,23 @@ Component({
         app.logOut()
       })
     },
+
     getUserData(){
+
       app.refreshAccessToken()
       .then((result) =>  app.getUserData())
       .then((data)=>{
         this.setData({
-          formattedSaldo: "Rp. " + new Intl.NumberFormat().format(data.saldo)
+          formattedSaldo: "Rp. " + new Intl.NumberFormat().format(data.saldo),
+          formattedTotalPrice: "Rp. " + new Intl.NumberFormat().format(this.props.totalPrice),
+          sisaSaldo: data.saldo - this.props.totalPrice,
+          formattedSisaSaldo: "Rp. " + new Intl.NumberFormat().format(data.saldo - this.props.totalPrice),
+          saldo: data.saldo,
         })
-    
+        
         this.setData({
-          formattedTotalPrice: "Rp. " + new Intl.NumberFormat().format(this.props.totalPrice)
-        })
-        this.setData({
-          sisaSaldo: data.saldo - this.props.totalPrice
-        })
-        this.setData({
-          formattedSisaSaldo: "Rp. " + new Intl.NumberFormat().format(data.saldo - this.props.totalPrice)
-        })
-        this.setData({
-          saldo: data.saldo
-        })
-
-       
-        this.setData({insufficient:this.data.sisaSaldo > 0 ? false : true })
+          insufficient:this.data.sisaSaldo > 0 ? false : true
+         })
 
       })
       .catch((error)=>{

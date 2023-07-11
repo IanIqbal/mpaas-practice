@@ -36,8 +36,8 @@ class ControllerUser {
                 throw {name:"Invalid", value:"Wrong username/password"}
             }
             
-            let accessToken = jwt.sign({ id: user.id }, process.env.SECRET, { expiresIn: "60000ms" })
-            let refreshToken = jwt.sign({ id: user.id }, process.env.SECRET, { expiresIn: "120000ms" })
+            let accessToken = jwt.sign({ id: user.id }, process.env.SECRET, { expiresIn: "30m" })
+            let refreshToken = jwt.sign({ id: user.id }, process.env.SECRET, { expiresIn: "1h" })
             let { rekening, saldo } = user
             res.status(200).json({
                 accessToken,
