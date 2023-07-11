@@ -19,7 +19,9 @@ Page({
               method:"get",
               headers:{
                 access_token:my.getStorageSync({"key":"accessToken"}).data,
-                "content-type":"application/json"
+                "content-type":"application/json",
+          'ngrok-skip-browser-warning': 'true',
+
               },
               dataType:"json",
               success: (result)=>{

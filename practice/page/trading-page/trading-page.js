@@ -21,9 +21,13 @@ Page({
     .then((result)=>{
 
       my.request({
-        url: "https://f778-103-144-175-27.ngrok-free.app" + "/companies",
+        url: app.globalData.address + "/companies",
         method:"get",
-        headers:{access_token: my.getStorageSync({key:"accessToken"}).data },
+        headers:{
+          access_token: my.getStorageSync({key:"accessToken"}).data ,
+          'ngrok-skip-browser-warning': 'true',
+        
+        },
         success:(data) =>{
           this.setData({companies:data.data})
         },

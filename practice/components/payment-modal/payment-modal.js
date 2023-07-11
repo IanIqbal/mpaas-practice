@@ -77,7 +77,12 @@ Component({
         
         my.httpRequest({
           url:  app.globalData.address +  '/transactions',
-          headers: {access_token: my.getStorageSync({key:"accessToken"}).data, 'content-type': 'application/json' },
+          headers: {
+            access_token: my.getStorageSync({key:"accessToken"}).data, 
+          'content-type': 'application/json',  
+          'ngrok-skip-browser-warning': 'true',
+
+        },
           method: 'post',
           data: {
             cart:app.globalData.cart,

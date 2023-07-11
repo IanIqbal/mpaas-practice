@@ -80,7 +80,9 @@ Page({
           headers: {
             access_token: my.getStorageSync({
               key: "accessToken"
-            }).data
+            }).data,
+          'ngrok-skip-browser-warning': 'true',
+
           },
           success: (data) => {
             this.setData({

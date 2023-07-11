@@ -30,7 +30,9 @@ Component({
           dataType: "json",
           method: "patch",
           headers: {
-            access_token: my.getStorageSync({key:"accessToken"}).data
+            access_token: my.getStorageSync({key:"accessToken"}).data,
+          'ngrok-skip-browser-warning': 'true',
+
           },
           timeout: 30000,
           success: (result) => {
