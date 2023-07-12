@@ -2,3 +2,35 @@
   height: 1000rpx;
   /* width: 300%; */
 }
+
+#time-option{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+#time-option button{
+  width: 80px;
+  /* margin: 0 10px; */
+  font-size: 0.8em;
+  color: white;
+  border: #E57C23 solid 1px;
+  background-color: #E57C23;
+}
+
+#company-id{
+  display: flex;
+  flex-direction: column;
+  margin: 5px 20px;
+}
+#company-id button{
+  padding: 5px 5px;
+  border: #E57C23 solid 1px;
+  background-color: #E57C23;
+  color: white;
+}
+  
+#company-name{
+  font-weight: 600;
+  font-size: 1.5em;
+}

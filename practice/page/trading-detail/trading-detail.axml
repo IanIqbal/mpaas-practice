@@ -1,4 +1,4 @@
-<view>
+<view a:if={{company.detailData}}>
 
   <scroll-view scroll-x="true">
   <view class="f2-chart"  
@@ -22,11 +22,17 @@
   </view>
   <view id="time-option">
     <block a:for="{{ timeType }}" >
-      <button disabled ="{{ currentTime != item.value ? false:true}}" size="small" type="primary" inline onTap="changeTime" data-type={{item.value}} >{{item.value}}</button>
+      <!-- <view   onTap="changeTime" data-type={{item.value}}>
+        <button-custom disabled ="{{ currentTime != item.value ? false:true}}" > {{item.value}}</button-custom>
+      </view> -->
+      <button  disabled ="{{ currentTime != item.value ? false:true}}" size="small" type="primary" inline onTap="changeTime" data-type={{item.value}}> {{item.value}}</button>
 
     </block>
   </view>
-  <text> Company Title</text>
+  <view id="company-id">
+    <text id="company-name" > {{company.companyData.name}} ({{company.companyData.symbol}})</text>
+    <button-custom >{{company.companyData.sector}}</button-custom>
+  </view>
 </view>
 
 

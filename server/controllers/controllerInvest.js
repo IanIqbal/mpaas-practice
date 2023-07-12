@@ -51,8 +51,9 @@ class ControllerInvest {
                 tidyMetaData[property] = data["Meta Data"][key]
             } 
 
+            let companyData = await Company.findOne({where: {symbol}})
             console.log(tidyMetaData);
-            let updatedData = {metaData:tidyMetaData, detailData:tidyData, detailWeek:tidyData.slice(0,5), detailMonth:tidyData.slice(0,20), detailThreeMonth:tidyData.slice(0,60)}
+            let updatedData = {companyData,metaData:tidyMetaData, detailData:tidyData, detailWeek:tidyData.slice(0,5), detailMonth:tidyData.slice(0,20), detailThreeMonth:tidyData.slice(0,60)}
             res.status(200).json(updatedData)
         } catch (error) {
             next(error)

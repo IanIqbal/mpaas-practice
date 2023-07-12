@@ -114,7 +114,7 @@ Page({
       })
       .catch((error) => {
         my.hideLoading();
-        app.logOut
+        app.logOut()
       })
   },
 
@@ -271,6 +271,7 @@ Page({
         }
       }
     })
+
     this.chart.render()
 
     return this.chart

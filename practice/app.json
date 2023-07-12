@@ -257,5 +257,6 @@
     ]
   },
   "debug": true,
-  "subPackageBuildType": "independent"
+  "subPackageBuildType": "independent",
+  "useDynamicPlugins": true
 }

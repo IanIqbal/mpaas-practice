@@ -1,0 +1,5 @@
+<button id="custom-button" size="small" type="text" inline >
+  <slot>
+
+  </slot>
+</button>
