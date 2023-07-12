@@ -1,4 +1,4 @@
-<button id="custom-button" size="small" type="text" inline >
+<button id="custom-button" disabled={{disabled}} size="small" type="text" onTap="functionHandle" data-type={{parentData}} inline >
   <slot>
 
   </slot>

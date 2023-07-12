@@ -22,10 +22,10 @@
   </view>
   <view id="time-option">
     <block a:for="{{ timeType }}" >
-      <!-- <view   onTap="changeTime" data-type={{item.value}}>
-        <button-custom disabled ="{{ currentTime != item.value ? false:true}}" > {{item.value}}</button-custom>
-      </view> -->
-      <button  disabled ="{{ currentTime != item.value ? false:true}}" size="small" type="primary" inline onTap="changeTime" data-type={{item.value}}> {{item.value}}</button>
+      <view   >
+        <button-custom onFunctionParent="onChangeTime"  disabled ="{{ currentTime != item.value ? false:true}}" parentData={{item.value}} > {{item.value}}</button-custom>
+      </view>
+      <!-- <button  disabled ="{{ currentTime != item.value ? false:true}}" size="small" type="primary" inline onTap="onChangeTime" data-type={{item.value}}> {{item.value}}</button> -->
 
     </block>
   </view>

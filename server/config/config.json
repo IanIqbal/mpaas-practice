@@ -14,7 +14,7 @@
     "dialect": "mysql"
   },
   "production": {
-    "url": "postgresql://postgres:Donvitocorleone13@db.oqlvjxkqnnckhbhvixny.supabase.co:5432/postgres",
+    "url": "DATABASE_URL",
     "dialect": "postgres"
   }
 }

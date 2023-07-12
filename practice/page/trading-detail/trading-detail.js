@@ -297,12 +297,12 @@ Page({
     this.initChart()
   },
 
-  changeTime(e) {
+  onChangeTime(e) {
     // console.log(e);
     let {
       type
     } = e.target.dataset
-
+    console.log("triggered");
     // this.setData({displayChart:false})
     // this.chart.destroy()
     this.setData({currentTime: type})
