@@ -27,13 +27,13 @@ Page({
     chartConfig: {},
     chart: {},
     f2: {},
-    currentType:"line",
-    zoom:100,
-    targetZoom:1
+    currentType: "line",
+    zoom: 100,
+    targetZoom: 1
 
   },
   onLoad(query) {
-  
+
     // if (!my.getStorageSync({
     //     key: "company"
     //   }).data || my.getStorageSync({
@@ -54,7 +54,7 @@ Page({
     //   console.log(this.data.company);
     // }
 
-      this.getCompanyDetail(query.symbol)
+    this.getCompanyDetail(query.symbol)
 
     // if (query.currentTime) {
     //   this.setData({
@@ -75,13 +75,13 @@ Page({
           content: "Loading"
         });
         my.request({
-          url:  app.globalData.address + `/companies/${symbol}`,
+          url: app.globalData.address + `/companies/${symbol}`,
           method: "get",
           headers: {
             access_token: my.getStorageSync({
               key: "accessToken"
             }).data,
-          'ngrok-skip-browser-warning': 'true',
+            'ngrok-skip-browser-warning': 'true',
 
           },
           success: (data) => {
@@ -121,17 +121,17 @@ Page({
   initChart(f2, config) {
     // const chart = new f2.Chart(config)
     // let chart = this.chart? this.chart.clear() : new f2.Chart(config)
-    if(this.chart){
+    if (this.chart) {
       this.chart.clear()
       console.log("clear<<<<<<<<<<<<<");
     }
-    
-    if(!this.chart){
+
+    if (!this.chart) {
       this.chart = new f2.Chart(config)
       console.log("<<<<<<<<start");
     }
- 
-   
+
+
     this.setData({
       chartConfig: config,
       f2: f2
@@ -225,12 +225,12 @@ Page({
       adjusted: {
         max: max
       },
-      close:{
-        max:closeMax,
-        color:"red",
-        style:{
-          grid:{
-            color:"red"
+      close: {
+        max: closeMax,
+        color: "red",
+        style: {
+          grid: {
+            color: "red"
           }
         }
       }
@@ -239,33 +239,49 @@ Page({
     let status = source[0].adjusted > source[source.length - 1].adjusted
     let color = status ? "green" : "red"
     let currentType = this.data.currentType
-    if(this.data.currentType == "line"){
+    if (this.data.currentType == "line") {
       console.log("line on");
       this.chart.area().position("time*close").color(color)
       this.chart.line().position("time*close").color(color)
       this.chart.point().position("time*close").color(color).size(2)
-    }else{
+    } else {
 
       console.log("candle on");
-      this.chart.schema().position("time*candleInterval").size(this.data.currentTime == "Past 100 Days" || "Past 3 Month"? 2 : 5).color('trend', function(trend) {
+      this.chart.schema().position("time*candleInterval").size(this.data.currentTime == "Past 100 Days" || "Past 3 Month" ? 2 : 5).color('trend', function (trend) {
         return ['#F4333C', '#1CA93D'][trend]
       }).shape("candle")
     }
     this.chart.tooltip({
-      alwaysShow:false,
-      showCrosshairs:true,
-      crosshairsType:"xy",
-      lineCap:"butt",
-      showTitle:true,
+      alwaysShow: false,
+      showCrosshairs: true,
+      crosshairsType: "xy",
+      lineCap: "butt",
+      showTitle: true,
 
-      onShow(target){
+      onShow(target) {
         console.log(target);
 
-        if(currentType == "candle"){
-          target.items[0] = {...target.items[0],name:"close", value:target.items[0].origin.close}
-          target.items.push({...target.items[0],name:"open", value:target.items[0].origin.open})
-          target.items.push({...target.items[0],name:"low", value:target.items[0].origin.low})
-          target.items.push({...target.items[0],name:"high", value:target.items[0].origin.high})
+        if (currentType == "candle") {
+          target.items[0] = {
+            ...target.items[0],
+            name: "close",
+            value: target.items[0].origin.close
+          }
+          target.items.push({
+            ...target.items[0],
+            name: "open",
+            value: target.items[0].origin.open
+          })
+          target.items.push({
+            ...target.items[0],
+            name: "low",
+            value: target.items[0].origin.low
+          })
+          target.items.push({
+            ...target.items[0],
+            name: "high",
+            value: target.items[0].origin.high
+          })
 
 
         }
@@ -281,14 +297,18 @@ Page({
     console.log(e);
   },
 
-  changeType(){
+  changeType() {
     switch (this.data.currentType) {
       case "line":
-        this.setData({currentType:"candle"})
+        this.setData({
+          currentType: "candle"
+        })
         break;
-      
+
       case "candle":
-        this.setData({currentType:"line"})
+        this.setData({
+          currentType: "line"
+        })
         break;
       default:
         break;
@@ -305,8 +325,10 @@ Page({
     console.log("triggered");
     // this.setData({displayChart:false})
     // this.chart.destroy()
-    this.setData({currentTime: type})
-    this.initChart( )
+    this.setData({
+      currentTime: type
+    })
+    this.initChart()
     // this.setData({displayChart:true})
 
     // my.redirectTo({
@@ -316,13 +338,38 @@ Page({
     // });
   },
 
-  changeSlider(e){
+  changeSlider(e) {
     console.log(e);
     console.log(e[1], this.data.zoom);
     this.setData({
       zoom: 100 * e[1],
     })
-    
-    this.initChart(this.data.f2,this.data.chartConfig )
+
+    this.initChart(this.data.f2, this.data.chartConfig)
   }
 });
+
+
+
+
+// const chart = new F2.Chart(config);
+// console.log(">>>>>>", chart) const data = pie;
+// console.log(">>>>>>", data) chart.source(data);
+// chart.interval().position('a*percent').color('name', ['s#1890FF', '#13C2C2', '#2FC25B', '#FACC14', '#F04864', '#8543E0']).adjust('stack').style({
+//   radius: [10, 7, 4, 2]
+// }) chart.scale({
+//   percent: {
+//     formatter: function formatter(val) {
+//       return val + '%';
+//     },
+//   },
+// }) chart.coord({
+//   transposed: true,
+//   innerRadius: 0.3,
+//   radius: 1,
+//   type: 'polar',
+// }) chart.guide().text(guide2.text);
+// chart.legend({
+//   position: 'left'
+// }) chart.render();
+// return chart;

@@ -52,12 +52,13 @@ Page({
       {
         name: "Mobile Tunai",
         logo: "GlobalOutline",
-        url:"https://bni.co.id/en-us/e-banking/bni-mobile-banking"
+        url:"http://127.0.0.1:8081/"
+        // url:"https://bni.co.id/en-us/e-banking/bni-mobile-banking"
       },
       {
         name: "DiKado",
         logo: "GiftOutline",
-        url:"https://bni.co.id/en-us/personal/others/services/travellers-cheque"
+        url:"http://127.0.0.1:5500"
       },
       {
         name: "MenuLengkap",
