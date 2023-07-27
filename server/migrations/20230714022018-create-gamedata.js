@@ -9,14 +9,14 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      gjds_saveId: {
+      SavedataId: {
         type: Sequelize.INTEGER,
         references:{
           model:"Savedata",
           key:"id"
         }
       },
-      userId: {
+      UserId: {
         type: Sequelize.INTEGER,
         references:{
           model:"Users",
@@ -25,11 +25,15 @@ module.exports = {
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: new Date()
+
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: new Date()
+
       }
     });
   },

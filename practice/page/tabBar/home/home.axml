@@ -76,5 +76,8 @@
 
     </block>
   </view>
-  
+
+  <button-custom icon="cash" color="black" >
+     
+  </button-custom>
 </view>

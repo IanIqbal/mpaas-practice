@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Savedata.hasOne(models.Gamedata)
+      // Savedata.belongsTo(models.UserId)
     }
   }
   Savedata.init({
@@ -21,7 +21,8 @@ module.exports = (sequelize, DataTypes) => {
     chary1: DataTypes.INTEGER,
     chary2: DataTypes.INTEGER,
     chary3: DataTypes.INTEGER,
-    high_score: DataTypes.INTEGER
+    high_score: DataTypes.INTEGER,
+    UserId:DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Savedata',

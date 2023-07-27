@@ -16,8 +16,8 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Gamedata.init({
-    gjds_saveId: DataTypes.INTEGER,
-    userId: DataTypes.INTEGER
+    SavedataId: DataTypes.INTEGER,
+    UserId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Gamedata',
