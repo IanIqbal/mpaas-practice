@@ -33,7 +33,8 @@ Page({
 
   onLoad() {
     this.getProducts()
-   
+    my.vibrateLong((res) => console.log("long")) 
+    
   },
 
   onShow(){

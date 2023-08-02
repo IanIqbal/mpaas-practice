@@ -8,8 +8,8 @@ class ControllerGame{
         try {
             console.log(req.body);
             let {score, charx1, charx2, charx3,chary1,chary2,chary3} = req.body
-            // let {id} = req.user
-            let id = 1
+            let {id} = req.user
+            // let id = 1
 
 
             let savedata = await Savedata.findOne({where:{UserId:id}})
@@ -33,8 +33,8 @@ class ControllerGame{
 
     static async getSaveData(req,res,next){
         try {
-            // let {id} = req.user
-            let id = 1
+            let {id} = req.user
+            // let id = 1
 
 
             let savedata = await Savedata.findAll({where:{UserId:id}, order: [['createdAt', 'DESC']]})

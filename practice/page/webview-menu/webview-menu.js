@@ -62,15 +62,16 @@ Page({
 
       // POST SCORE TO DATABASE VIA MPAAS
       // if (!this.data.flag){
-      //   console.log(e);
-      //   // this.postScore()
+        console.log(e);
+        // this.postScore()
 
       //   this.setData({flag:true})
       // }
 
       // POST SCORE TO DATABASE FROM THE GAME DIRECTLY
-      if (!this.data.flag) {
-        console.log(e);
+      // if (!this.data.flag) {
+
+        // console.log(e);
         app.refreshAccessToken()
           .then((result) => {
             this.webViewContext.postMessage({
@@ -85,32 +86,15 @@ Page({
           .catch((error) => {
             app.logOut()
           })
-      }
+
+      // }
 
     }
 
 
 
 
-    // console.log(this.webViewContext);
-    // this.data.webView.postMessage({'sendToWebView':'dari mpaas'})
-
-    // my.getStorage({
-    //   key: 'accessToken',
-    //   success: (res) => {
-    //     console.log(res);
-    //     // if (res.success) {
-    //     //   console.log("执行成功");
-    //     // }
-
-
-    //   },
-    //   fail: (err) => {
-    //    objects[0].setString(err);
-
-    //     console.log(err)
-    //   }
-    // });
+   
   },
 
   postScore() {

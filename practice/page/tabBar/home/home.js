@@ -59,7 +59,7 @@ Page({
         name: "DiKado",
         logo: "GiftOutline",
         // url: "http://127.0.0.1:5021"
-        url: "http://127.0.0.1:1003"
+        url: "http://127.0.0.1:2002"
 
       },
       {
@@ -79,7 +79,20 @@ Page({
 
     ]
   },
-  onLoad() {},
+  onLoad() {
+    my.vibrate({
+      success: () => {
+        console.log("vibrated");
+      }
+    })
+
+    my.getSystemInfo({
+      success: (res) => {
+       console.log(res);
+      }
+    })
+
+  },
   toMiniApp(e) {
     let {
       page
